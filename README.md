@@ -509,6 +509,9 @@ Tạo/kiểm tra khách hàng
 
 ## 9. Cấu trúc project
 
+Project được tổ chức theo cấu trúc như sau:
+
+```text
 QuanLyKhachSan/
 │
 ├── Data/
@@ -516,18 +519,48 @@ QuanLyKhachSan/
 │
 ├── Forms/
 │   ├── FrmMain.cs
+│   ├── FrmMain.Designer.cs
+│   │
 │   ├── FrmDanhMuc.cs
+│   ├── FrmDanhMuc.Designer.cs
+│   │
 │   ├── FrmPhongTienNghi.cs
+│   ├── FrmPhongTienNghi.Designer.cs
+│   │
 │   ├── FrmDatNhanPhong.cs
+│   ├── FrmDatNhanPhong.Designer.cs
+│   │
 │   ├── FrmSuDungDichVu.cs
+│   ├── FrmSuDungDichVu.Designer.cs
+│   │
 │   ├── FrmTraPhongThanhToan.cs
-│   └── FrmThongKe.cs
+│   ├── FrmTraPhongThanhToan.Designer.cs
+│   │
+│   ├── FrmThongKe.cs
+│   └── FrmThongKe.Designer.cs
 │
+├── App.config
 ├── Program.cs
 ├── QuanLyKhachSan.csproj
 └── README.md
+```
 
----
+### Mô tả cấu trúc
+
+- **Data/**: Chứa lớp hỗ trợ kết nối và thao tác với cơ sở dữ liệu SQL Server.
+- **Db.cs**: Quản lý chuỗi kết nối và thực hiện các câu lệnh truy vấn SQL.
+- **Forms/**: Chứa các Windows Form của chương trình.
+- **FrmMain**: Form chính, dùng để điều hướng đến các chức năng của hệ thống.
+- **FrmDanhMuc**: Quản lý các dữ liệu danh mục.
+- **FrmPhongTienNghi**: Quản lý thông tin phòng và tiện nghi.
+- **FrmDatNhanPhong**: Thực hiện chức năng đặt phòng và nhận phòng.
+- **FrmSuDungDichVu**: Quản lý việc sử dụng dịch vụ của khách.
+- **FrmTraPhongThanhToan**: Thực hiện trả phòng và thanh toán.
+- **FrmThongKe**: Hiển thị các thông tin thống kê của hệ thống.
+- **App.config**: Chứa cấu hình ứng dụng và chuỗi kết nối SQL Server.
+- **Program.cs**: Điểm bắt đầu chạy chương trình.
+- **QuanLyKhachSan.csproj**: File cấu hình project C#.
+- **README.md**: Tài liệu mô tả bài thực hành và hướng dẫn chạy chương trình.
 
 ## 10. Kết luận
 
