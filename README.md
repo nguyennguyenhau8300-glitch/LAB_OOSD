@@ -1,5 +1,3 @@
-<img width="1830" height="641" alt="image" src="https://github.com/user-attachments/assets/df9b2b13-a147-44f3-8935-fb292eeb892e" /># LAB_OOSD
-
 # LAB 3 - HỆ THỐNG QUẢN LÝ KHÁCH SẠN
 
 ## 1. Thông tin sinh viên
@@ -7,123 +5,75 @@
 - Họ và tên: Nguyễn Nguyên Hậu
 - MSSV: 1250080049
 - Tên bài Lab: LAB 3 - Hệ thống quản lý khách sạn
-
-## 2. Môi trường và phiên bản sử dụng
-
-- Hệ điều hành: Windows
-- IDE: Visual Studio
-- Ngôn ngữ lập trình: C#
-- Framework: .NET 10.0
-- Loại ứng dụng: Windows Forms (WinForms)
-- Hệ quản trị cơ sở dữ liệu: Microsoft SQL Server
-- SQL Server Instance: `.\SQLEXPRESS`
-- Database: `QuanLyKhachSan`
-- Thư viện kết nối SQL Server: `Microsoft.Data.SqlClient`
-
-
-## 3. Nội dung đã thực hiện
-
-Trong LAB 3, chương trình được xây dựng dưới dạng ứng dụng Windows Forms nhằm hỗ trợ quản lý các nghiệp vụ cơ bản của khách sạn.
-
-Các chức năng chính của chương trình gồm:
-
-### 3.1. Danh mục
-
-Quản lý các dữ liệu danh mục phục vụ cho hệ thống như:
-
-- Khu vực
-- Khách hàng
-- Nhân viên
-- Dịch vụ
-
-Các chức năng cơ bản:
-
-- Thêm dữ liệu
-- Sửa dữ liệu
-- Xóa dữ liệu
-- Hiển thị danh sách
-- Tìm kiếm dữ liệu
-
-### 3.2. Phòng - Tiện nghi
-
-Quản lý thông tin phòng và tiện nghi của khách sạn.
-
-Thông tin phòng gồm:
-
-- Số phòng
-- Khu vực
-- Số người tối đa
-- Đơn giá ngày
-- Trạng thái phòng
-
-Trạng thái phòng được quản lý để hỗ trợ quá trình đặt, nhận và trả phòng.
-
-### 3.3. Đặt / Nhận phòng
-
-Thực hiện nghiệp vụ đặt và nhận phòng cho khách hàng.
-
-Chức năng bao gồm:
-
-- Chọn khách hàng
-- Chọn nhân viên lễ tân
-- Chọn phòng
-- Nhập ngày nhận phòng
-- Nhập ngày trả dự kiến
-- Nhập tiền cọc
-- Chọn kênh đặt phòng
-- Ghi nhận số người
-- Theo dõi trạng thái đặt phòng
-- Lưu thông tin người lưu trú
-
-Dữ liệu đặt phòng được liên kết giữa các bảng như `PhieuDatPhong`, `ChiTietDatPhong`, `Phong`, `KhachHang` và `NguoiLuuTru`.
-
-### 3.4. Sử dụng dịch vụ
-
-Quản lý các dịch vụ khách sử dụng trong thời gian lưu trú.
-
-Chức năng bao gồm:
-
-- Chọn phòng/phiếu đặt phòng
-- Chọn dịch vụ
-- Nhập số lượng
-- Ghi nhận ngày sử dụng
-- Lưu đơn giá
-- Tính tiền dịch vụ
-
-### 3.5. Trả phòng - Thanh toán
-
-Thực hiện nghiệp vụ trả phòng và thanh toán cho khách.
-
-Chức năng bao gồm:
-
-- Xác định phòng cần trả
-- Kiểm tra thông tin đặt phòng
-- Tổng hợp tiền phòng
-- Tổng hợp tiền dịch vụ
-- Lập hóa đơn
-- Thanh toán
-- Cập nhật trạng thái phòng sau khi khách trả phòng
-
-### 3.6. Thống kê
-
-Thống kê và tổng hợp dữ liệu từ hệ thống quản lý khách sạn.
-
-Các thông tin thống kê có thể bao gồm:
-
-- Số lượng phòng
-- Trạng thái phòng
-- Số lượt đặt phòng
-- Thông tin khách lưu trú
-- Doanh thu
-- Thông tin hóa đơn và thanh toán
+- Môn học: Phương pháp phát triển phần mềm hướng đối tượng
 
 ---
 
-## 4. Kết quả đạt được
+## 2. Môi trường và công nghệ sử dụng
 
-Sau khi thực hiện LAB 3, chương trình đã xây dựng được giao diện quản lý khách sạn bằng Windows Forms và kết nối với cơ sở dữ liệu SQL Server.
+- Hệ điều hành: Windows
+- IDE: Visual Studio 2026
+- Ngôn ngữ lập trình: C#
+- Framework: .NET 10.0
+- Giao diện: Windows Forms (WinForms)
+- Hệ quản trị cơ sở dữ liệu: Microsoft SQL Server
+- SQL Server Instance: SQLEXPRESS
+- Database: QuanLyKhachSan
+- Thư viện kết nối CSDL: Microsoft.Data.SqlClient
 
-Chương trình tổ chức các chức năng chính thành 6 nhóm:
+---
+
+## 3. Mô tả bài toán
+
+LAB 3 xây dựng chương trình quản lý khách sạn bằng C# WinForms kết hợp
+SQL Server.
+
+Hệ thống hỗ trợ quản lý các thông tin cơ bản của khách sạn như phòng,
+khách hàng, nhân viên, tiện nghi và dịch vụ.
+
+Ngoài ra, chương trình thực hiện các nghiệp vụ chính gồm đặt phòng,
+nhận phòng, sử dụng dịch vụ, trả phòng, lập hóa đơn, thanh toán và
+thống kê.
+
+---
+
+## 4. Nội dung đã thực hiện
+
+### 4.1. Thiết kế cơ sở dữ liệu
+
+Đã xây dựng cơ sở dữ liệu `QuanLyKhachSan` trên SQL Server.
+
+Các bảng chính gồm:
+
+- KhuVuc
+- Phong
+- LoaiTienNghi
+- TienNghi
+- LapDatTienNghi
+- KhachHang
+- NhanVien
+- PhieuDatPhong
+- ChiTietDatPhong
+- NguoiLuuTru
+- DichVu
+- PhieuSuDungDV
+- ChiTietSuDungDV
+- KiemTraPhong
+- ChiTietKiemTra
+- PhieuDenBu
+- ChiTietDenBu
+- HoaDon
+- ThanhToan
+
+Các bảng được thiết lập khóa chính, khóa ngoại và các ràng buộc cần
+thiết nhằm đảm bảo tính toàn vẹn của dữ liệu.
+
+---
+
+### 4.2. Xây dựng giao diện chương trình
+
+Chương trình được xây dựng bằng Windows Forms và chia thành các chức
+năng chính:
 
 1. Danh mục
 2. Phòng - Tiện nghi
@@ -132,72 +82,242 @@ Chương trình tổ chức các chức năng chính thành 6 nhóm:
 5. Trả phòng - Thanh toán
 6. Thống kê
 
-Các Form có thể trao đổi dữ liệu với database `QuanLyKhachSan` và sử dụng các khóa chính, khóa ngoại để đảm bảo mối quan hệ giữa các bảng.
+Form chính `FrmMain` được sử dụng để truy cập các chức năng của hệ thống.
 
 ---
 
-## 5. Lỗi gặp phải
+### 4.3. Quản lý danh mục
 
-### 5.1. Lỗi kết nối SQL Server
+Form `FrmDanhMuc` hỗ trợ quản lý:
 
-Lỗi đã gặp:
+- Khu vực
+- Khách hàng
+- Nhân viên
+- Dịch vụ
 
-`Cannot open database "QuanLyKhachSan" requested by the login.`
+Các chức năng cơ bản:
+
+- Hiển thị danh sách
+- Thêm dữ liệu
+- Sửa dữ liệu
+- Xóa dữ liệu
+- Làm mới dữ liệu
+
+---
+
+### 4.4. Quản lý phòng và tiện nghi
+
+Form `FrmPhongTienNghi` hỗ trợ:
+
+- Quản lý danh sách phòng
+- Quản lý loại phòng
+- Quản lý trạng thái phòng
+- Quản lý tiện nghi
+- Theo dõi tiện nghi được lắp đặt tại từng phòng
+- Ghi nhận ngày lắp đặt và ngày tháo dỡ tiện nghi
+
+Các trạng thái phòng gồm:
+
+- Trống
+- Đã đặt
+- Đang ở
+- Bảo trì
+
+---
+
+### 4.5. Đặt và nhận phòng
+
+Form `FrmDatNhanPhong` hỗ trợ:
+
+- Tạo phiếu đặt phòng
+- Chọn khách hàng
+- Chọn nhân viên lễ tân
+- Chọn ngày nhận và ngày trả dự kiến
+- Ghi nhận tiền cọc
+- Chọn kênh đặt phòng
+- Thêm phòng vào phiếu đặt
+- Ghi nhận số người lưu trú
+- Thực hiện nhận phòng
+- Cập nhật trạng thái phòng
+
+Hệ thống có kiểm tra:
+
+- Ngày trả phải lớn hơn ngày nhận
+- Số người không được vượt quá sức chứa của phòng
+- Phòng không được bị trùng lịch với phiếu đặt khác
+- Một phòng không được thêm trùng vào cùng một phiếu đặt
+
+---
+
+### 4.6. Sử dụng dịch vụ
+
+Form `FrmSuDungDichVu` hỗ trợ ghi nhận các dịch vụ khách sử dụng trong
+thời gian lưu trú.
+
+Các thông tin quản lý gồm:
+
+- Phiếu đặt phòng
+- Phòng
+- Ngày sử dụng
+- Nhân viên thực hiện
+- Dịch vụ
+- Số lượng
+- Đơn giá
+- Thành tiền
+
+Khi cùng một dịch vụ được sử dụng nhiều lần trong cùng ngày tại cùng
+phòng, hệ thống thực hiện cộng dồn số lượng thay vì tạo dữ liệu trùng.
+
+---
+
+### 4.7. Trả phòng và thanh toán
+
+Form `FrmTraPhongThanhToan` hỗ trợ:
+
+- Xác định phiếu đang lưu trú
+- Tính tiền phòng
+- Tính tiền dịch vụ
+- Tính tiền đền bù
+- Trừ tiền cọc
+- Lập hóa đơn
+- Ghi nhận thanh toán
+- Hoàn tất trả phòng
+
+Công thức tổng tiền:
+
+TongThanhToan = TienPhong + TienDichVu + TienDenBu - TienCoc
+
+Hệ thống hỗ trợ các phương thức thanh toán:
+
+- Tiền mặt
+- Chuyển khoản
+- Thẻ
+
+Một hóa đơn có thể được thanh toán nhiều lần cho đến khi đủ tổng số
+tiền cần thanh toán.
+
+Sau khi thanh toán đầy đủ và trả phòng:
+
+- Phiếu đặt phòng chuyển sang trạng thái `Đã trả`.
+- Ngày trả thực tế được cập nhật.
+- Phòng được chuyển về trạng thái `Trống` nếu phòng không ở trạng thái
+  bảo trì.
+
+---
+
+### 4.8. Thống kê
+
+Form `FrmThongKe` hỗ trợ hiển thị một số thông tin tổng hợp:
+
+- Tổng số phòng
+- Số phòng trống
+- Số phiếu/khách đang ở
+- Doanh thu theo khoảng thời gian
+- Danh sách hóa đơn
+- Trạng thái hóa đơn
+
+Người dùng có thể chọn khoảng thời gian từ ngày - đến ngày để xem dữ
+liệu thống kê.
+
+---
+
+### 4.9. Stored Procedure và xử lý nghiệp vụ
+
+Một số Stored Procedure được sử dụng để xử lý các nghiệp vụ quan trọng:
+
+#### sp_KiemTraPhongTrong
+
+Kiểm tra phòng có bị trùng lịch đặt trong khoảng thời gian yêu cầu hay
+không.
+
+#### sp_ThemPhongVaoPhieuDat
+
+Thêm phòng vào phiếu đặt và kiểm tra:
+
+- Phiếu đặt có tồn tại hay không
+- Phòng có tồn tại hay không
+- Sức chứa tối đa của phòng
+- Trùng lịch đặt phòng
+- Phòng đã tồn tại trong phiếu hay chưa
+
+#### sp_ThemDichVu
+
+Thêm dịch vụ cho khách đang lưu trú.
+
+Nếu dịch vụ đã tồn tại trong cùng ngày thì hệ thống cộng thêm số lượng.
+
+#### sp_ThanhToanHoaDon
+
+Thực hiện thanh toán hóa đơn và kiểm tra:
+
+- Hóa đơn có tồn tại
+- Số tiền thanh toán hợp lệ
+- Phương thức thanh toán hợp lệ
+- Không cho thanh toán vượt quá số tiền còn lại
+- Tự động cập nhật trạng thái hóa đơn
+
+---
+
+## 5. Kết quả đạt được
+
+Sau khi thực hiện LAB 3, chương trình đã xây dựng được giao diện quản
+lý khách sạn và kết nối với cơ sở dữ liệu SQL Server.
+
+Các chức năng chính của hệ thống được tổ chức thành các module riêng
+biệt, giúp việc quản lý và kiểm tra chương trình thuận tiện hơn.
+
+Hệ thống xử lý được các nghiệp vụ chính:
+
+- Quản lý danh mục
+- Quản lý phòng và tiện nghi
+- Đặt phòng
+- Kiểm tra trùng lịch phòng
+- Kiểm tra sức chứa phòng
+- Nhận phòng
+- Quản lý người lưu trú
+- Ghi nhận dịch vụ
+- Cộng dồn dịch vụ
+- Tính chi phí lưu trú
+- Lập hóa đơn
+- Thanh toán nhiều lần
+- Trả phòng
+- Thống kê dữ liệu
+
+---
+
+## 6. Một số lỗi gặp phải
+
+### 6.1. Lỗi kết nối SQL Server
+
+Lỗi gặp phải:
+
+`Login failed for user`
+
+hoặc lỗi xảy ra trong quá trình đăng nhập SQL Server.
 
 Nguyên nhân:
 
-- Chương trình sử dụng sai phương thức đăng nhập SQL Server.
-- Tài khoản kết nối chưa có quyền truy cập database.
-- Connection String chưa đúng.
+- Sai Server/Instance.
+- Sai tài khoản hoặc mật khẩu SQL Server.
+- SQL Server Authentication chưa được bật.
+- Tài khoản chưa có quyền truy cập database.
 
 Cách khắc phục:
 
-- Kiểm tra lại SQL Server Instance.
-- Kiểm tra database `QuanLyKhachSan`.
-- Kiểm tra tài khoản đăng nhập SQL Server.
-- Cấu hình lại Connection String.
-- Sử dụng `TrustServerCertificate=True` khi cần thiết.
+- Kiểm tra SQL Server Instance.
+- Sử dụng đúng `.\SQLEXPRESS`.
+- Kiểm tra tài khoản SQL Server.
+- Bật SQL Server and Windows Authentication Mode nếu sử dụng SQL
+  Authentication.
+- Kiểm tra lại Connection String.
 
-### 5.2. Lỗi sai tên cột trong database
+---
 
-Một số lỗi gặp phải:
-
-`Invalid column name`
+### 6.2. Lỗi thiếu Microsoft.Data.SqlClient
 
 Nguyên nhân:
 
-Tên cột được sử dụng trong câu lệnh SQL không trùng với tên cột thực tế trong database.
-
-Cách khắc phục:
-
-- Kiểm tra cấu trúc bảng trong SQL Server.
-- Sử dụng đúng tên bảng và tên cột.
-- Đồng bộ câu lệnh SQL trong chương trình với database.
-
-### 5.3. Lỗi Windows Forms Designer
-
-Trong quá trình xây dựng giao diện đã gặp lỗi do khai báo trùng:
-
-- `InitializeComponent()`
-- Control
-- Biến thành viên của Form
-
-Nguyên nhân:
-
-Code giao diện trong file `.Designer.cs` bị khai báo lại trong file `.cs`.
-
-Cách khắc phục:
-
-Tách rõ hai phần:
-
-- `FrmXXX.cs`: xử lý sự kiện và nghiệp vụ.
-- `FrmXXX.Designer.cs`: khai báo và khởi tạo giao diện.
-
-Class của Form được khai báo bằng từ khóa `partial`.
-
-### 5.4. Lỗi thư viện SQL Client
-
-Chương trình cần thư viện SQL Client phù hợp với phiên bản .NET đang sử dụng.
+Project chưa cài thư viện kết nối SQL Server phù hợp.
 
 Cách khắc phục:
 
@@ -205,61 +325,144 @@ Cài package:
 
 `Microsoft.Data.SqlClient`
 
-thông qua NuGet Package Manager của Visual Studio.
+thông qua NuGet Package Manager.
 
 ---
 
-## 6. Hướng dẫn cài đặt và chạy chương trình
+### 6.3. Lỗi sai tên bảng hoặc tên cột
 
-### Bước 1: Chuẩn bị SQL Server
+Nguyên nhân:
 
-Cài đặt Microsoft SQL Server và SQL Server Management Studio hoặc sử dụng SQL Server Object Explorer trong Visual Studio.
+Tên bảng/cột trong code C# không trùng với cấu trúc database.
 
-SQL Server Instance sử dụng:
+Ví dụ hệ thống sử dụng:
 
-`.\SQLEXPRESS`
+- SoPhieuDat
+- MaKhach
+- MaNVLeTan
+- SoPhong
+- ChiTietSuDungDV
 
-### Bước 2: Tạo cơ sở dữ liệu
+Cách khắc phục:
 
-Tạo hoặc khôi phục database:
+Kiểm tra lại cấu trúc bảng trong SQL Server và sửa câu lệnh SQL trong
+code C# cho đúng với tên bảng và tên cột thực tế.
 
-`QuanLyKhachSan`
+---
 
-Đảm bảo các bảng cần thiết đã được tạo đầy đủ và các quan hệ khóa ngoại hoạt động bình thường.
+### 6.4. Lỗi trùng dữ liệu
 
-### Bước 3: Cấu hình kết nối
+Một số trường được thiết lập PRIMARY KEY hoặc UNIQUE nên không thể thêm
+hai dữ liệu giống nhau.
 
-Mở phần cấu hình kết nối database trong project và kiểm tra Connection String.
+Cách khắc phục:
+
+- Kiểm tra dữ liệu trước khi thêm.
+- Không chạy script dữ liệu mẫu nhiều lần.
+- Sử dụng mã khác khi tạo dữ liệu mới.
+
+---
+
+### 6.5. Lỗi đặt phòng trùng lịch
+
+Một phòng có thể đã được sử dụng trong khoảng thời gian khách muốn đặt.
+
+Cách khắc phục:
+
+Sử dụng Stored Procedure `sp_ThemPhongVaoPhieuDat` để kiểm tra khoảng
+thời gian đặt trước khi thêm phòng vào phiếu.
+
+---
+
+### 6.6. Lỗi ràng buộc khóa ngoại khi xóa
+
+Một số dữ liệu không thể xóa do đã được sử dụng trong bảng khác.
 
 Ví dụ:
 
-`Server=.\SQLEXPRESS;Database=QuanLyKhachSan;User Id=sa;Password=<MAT_KHAU>;TrustServerCertificate=True;`
+- Phòng đã có phiếu đặt.
+- Khách hàng đã có phiếu đặt.
+- Dịch vụ đã phát sinh trong phiếu sử dụng dịch vụ.
+- Tiện nghi đã được lắp đặt hoặc kiểm tra.
 
-Thay `<MAT_KHAU>` bằng mật khẩu SQL Server tương ứng trên máy chạy chương trình.
+Cách khắc phục:
 
-### Bước 4: Cài NuGet Package
+Không xóa trực tiếp dữ liệu đang được tham chiếu. Kiểm tra dữ liệu liên
+quan trước khi thực hiện thao tác xóa.
 
-Trong Visual Studio:
+---
 
-`Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution`
+## 7. Hướng dẫn chạy chương trình
 
-Tìm và cài:
+### Bước 1: Chuẩn bị SQL Server
+
+Cài đặt SQL Server và đảm bảo SQL Server Express đang hoạt động.
+
+Instance sử dụng trong project:
+
+`.\SQLEXPRESS`
+
+---
+
+### Bước 2: Tạo cơ sở dữ liệu
+
+Mở SQL Server Management Studio và chạy file/script SQL của LAB 3 để
+tạo database:
+
+`QuanLyKhachSan`
+
+Sau đó tạo các bảng, ràng buộc, Stored Procedure và dữ liệu mẫu.
+
+---
+
+### Bước 3: Kiểm tra Connection String
+
+Mở file:
+
+`Data/Db.cs`
+
+Kiểm tra Connection String.
+
+Ví dụ sử dụng SQL Server Authentication:
+
+Server=.\SQLEXPRESS;
+Database=QuanLyKhachSan;
+User Id=sa;
+Password=MAT_KHAU;
+Encrypt=True;
+TrustServerCertificate=True;
+
+Thay `MAT_KHAU` bằng mật khẩu SQL Server trên máy chạy chương trình.
+
+---
+
+### Bước 4: Mở project
+
+Mở project bằng Visual Studio 2026.
+
+Đảm bảo project sử dụng:
+
+`.NET 10.0`
+
+Nếu thiếu package SQL Server, cài:
 
 `Microsoft.Data.SqlClient`
 
-### Bước 5: Build chương trình
+---
 
-Mở Solution của LAB 3 trong Visual Studio.
+### Bước 5: Build project
 
 Chọn:
 
 `Build -> Build Solution`
 
-hoặc nhấn:
+hoặc sử dụng:
 
 `Ctrl + Shift + B`
 
-Đảm bảo chương trình không còn lỗi build.
+Đảm bảo project không còn lỗi biên dịch.
+
+---
 
 ### Bước 6: Chạy chương trình
 
@@ -269,65 +472,73 @@ Nhấn:
 
 hoặc chọn:
 
-`Debug -> Start Debugging`
+`Start`
 
-Màn hình chính **Hệ thống quản lý khách sạn** sẽ xuất hiện.
+Chương trình sẽ mở `FrmMain`.
 
----
+Từ màn hình chính có thể kiểm tra lần lượt:
 
-## 7. Hướng dẫn kiểm tra chức năng
-
-Giảng viên có thể kiểm tra chương trình theo thứ tự:
-
-1. Mở chương trình.
-2. Kiểm tra chức năng **Danh mục**.
-3. Kiểm tra **Phòng - Tiện nghi**.
-4. Tạo một phiếu **Đặt / Nhận phòng**.
-5. Ghi nhận **Sử dụng dịch vụ** cho phòng.
-6. Thực hiện **Trả phòng - Thanh toán**.
-7. Kiểm tra dữ liệu tại chức năng **Thống kê**.
-8. Kiểm tra dữ liệu trực tiếp trong SQL Server để xác nhận dữ liệu đã được lưu.
+1. Danh mục
+2. Phòng - Tiện nghi
+3. Đặt / Nhận phòng
+4. Sử dụng dịch vụ
+5. Trả phòng - Thanh toán
+6. Thống kê
 
 ---
 
-## 8. Cấu trúc chương trình
+## 8. Quy trình kiểm tra nghiệp vụ đề xuất
 
-Cấu trúc project chính:
+Giảng viên có thể kiểm tra chương trình theo quy trình:
 
-    QuanLyKhachSan/
-    │
-    ├── Data/
-    │   └── Db.cs
-    │
-    ├── Forms/
-    │   ├── FrmMain.cs
-    │   ├── FrmKhuVuc.cs
-    │   ├── FrmPhong.cs
-    │   ├── FrmKhachHang.cs
-    │   ├── FrmNhanVien.cs
-    │   ├── FrmDatPhong.cs
-    │   ├── FrmNhanPhong.cs
-    │   ├── FrmSuDungDichVu.cs
-    │   ├── FrmTraPhong.cs
-    │   ├── FrmThanhToan.cs
-    │   └── FrmThongKe.cs
-    │
-    ├── Program.cs
-    └── QuanLyKhachSan.csproj
+Tạo/kiểm tra khách hàng
+→ Tạo phiếu đặt phòng
+→ Thêm phòng vào phiếu
+→ Kiểm tra sức chứa và trùng lịch
+→ Nhận phòng
+→ Thêm người lưu trú
+→ Ghi nhận dịch vụ
+→ Trả phòng
+→ Tính tiền
+→ Lập hóa đơn
+→ Thanh toán
+→ Hoàn tất trả phòng
+→ Kiểm tra thống kê
 
 ---
 
-## 9. Ghi chú
+## 9. Cấu trúc project
 
-- SQL Server phải được khởi động trước khi chạy chương trình.
-- Database `QuanLyKhachSan` phải tồn tại.
-- Cần chỉnh lại tài khoản/mật khẩu trong Connection String nếu chạy chương trình trên máy khác.
-- Không xóa hoặc đổi tên các bảng/cột trong database nếu chưa cập nhật lại code C# tương ứng.
+QuanLyKhachSan/
+│
+├── Data/
+│   └── Db.cs
+│
+├── Forms/
+│   ├── FrmMain.cs
+│   ├── FrmDanhMuc.cs
+│   ├── FrmPhongTienNghi.cs
+│   ├── FrmDatNhanPhong.cs
+│   ├── FrmSuDungDichVu.cs
+│   ├── FrmTraPhongThanhToan.cs
+│   └── FrmThongKe.cs
+│
+├── Program.cs
+├── QuanLyKhachSan.csproj
+└── README.md
 
 ---
 
 ## 10. Kết luận
 
-LAB 3 đã thực hiện việc xây dựng ứng dụng quản lý khách sạn bằng C# Windows Forms kết hợp SQL Server.
+LAB 3 đã xây dựng hệ thống quản lý khách sạn bằng C# WinForms kết hợp
+SQL Server.
 
-Qua bài Lab, các nội dung chính được thực hành gồm thiết kế giao diện Windows Forms, kết nối cơ sở dữ liệu, thực hiện các thao tác thêm/sửa/xóa/tìm kiếm dữ liệu, xử lý quan hệ giữa nhiều bảng và xây dựng các nghiệp vụ cơ bản của hệ thống quản lý khách sạn.
+Thông qua bài Lab, sinh viên thực hành được việc thiết kế cơ sở dữ liệu,
+kết nối C# với SQL Server, xây dựng giao diện WinForms, thực hiện các
+thao tác CRUD và xử lý các nghiệp vụ có liên quan đến nhiều bảng dữ
+liệu.
+
+Hệ thống có thể tiếp tục phát triển thêm các chức năng như tìm kiếm nâng
+cao, phân quyền tài khoản, xuất hóa đơn, báo cáo doanh thu và cải thiện
+giao diện người dùng.
