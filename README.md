@@ -2,11 +2,9 @@
 
 ## 1. THÔNG TIN SINH VIÊN
 
-- **Họ và tên:** ............................................................
-- **MSSV:** ................................................................
-- **Lớp:** .................................................................
-- **Môn học:** Phân tích và thiết kế hệ thống hướng đối tượng
-- **Tên bài thực hành:** Xây dựng hệ thống Quản lý thư viện
+- **Họ và tên:** Nguyễn Nguyên Hậu
+- **MSSV:** 1250080049
+- **Lớp:** 12_ĐH_CNPM1
 - **Ngôn ngữ lập trình:** C#
 - **Loại ứng dụng:** Windows Forms
 - **Cơ sở dữ liệu:** Microsoft SQL Server
