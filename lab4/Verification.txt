@@ -1,0 +1,19 @@
+﻿PASS 1 Exactly three tables
+PASS 2 Demo login
+PASS 3 Wrong password rejected
+PASS 4 Express below threshold
+PASS 5 Express at threshold
+PASS 6 Same day below threshold
+PASS 7 Same day at threshold
+PASS 8 Cart merges product
+PASS 9 Unavailable product blocked
+PASS 10 Decline retains cart
+PASS 11 Timeout awaits reconciliation
+PASS 12 Reconcile saves successful order
+PASS 13 Order detail is saved
+PASS 14 Email contains no card details
+PASS 15 Email failure preserves successful order
+PASS 16 Duplicate username rejected
+PASS 17 AMEX CSV length validated
+PASS 18 Main and history forms instantiate
+TOTAL 18 checks passed. Demo orders created for lab verification.

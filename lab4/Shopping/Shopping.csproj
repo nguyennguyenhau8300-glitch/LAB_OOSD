@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>Shopping</RootNamespace>
+    <AssemblyName>Shopping</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.3" />
+    <None Update="Database\CuaHangOnlineDB.sql" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Connection.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Forms\FrmTrangChu.cs;Forms\FrmGioHang.cs;Forms\FrmDatHang.cs;Forms\FrmDangNhap.cs;Forms\FrmDangKy.cs;Forms\FrmLichSuDonHang.cs;Forms\FrmChiTietSanPham.cs;Forms\FrmKetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FrmGioHang.Designer.cs"><DependentUpon>FrmGioHang.cs</DependentUpon></Compile>
+    <Compile Update="Forms\FrmDatHang.Designer.cs"><DependentUpon>FrmDatHang.cs</DependentUpon></Compile>
+    <Compile Update="Forms\FrmDangNhap.Designer.cs"><DependentUpon>FrmDangNhap.cs</DependentUpon></Compile>
+    <Compile Update="Forms\FrmTrangChu.Designer.cs"><DependentUpon>FrmTrangChu.cs</DependentUpon></Compile>
+    <Compile Update="Forms\FrmLichSuDonHang.Designer.cs"><DependentUpon>FrmLichSuDonHang.cs</DependentUpon></Compile>
+    <Compile Update="Forms\FrmChiTietSanPham.Designer.cs"><DependentUpon>FrmChiTietSanPham.cs</DependentUpon></Compile>
+    <Compile Update="Forms\FrmDangKy.Designer.cs"><DependentUpon>FrmDangKy.cs</DependentUpon></Compile>
+    <Compile Update="Forms\FrmKetQua.Designer.cs"><DependentUpon>FrmKetQua.cs</DependentUpon></Compile>
+  </ItemGroup>
+</Project>
+
