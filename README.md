@@ -122,7 +122,7 @@ giữ giới hạn 3 bảng. Cần hoàn tất đối soát trước khi thoát;
 sau khi đóng ứng dụng phải bổ sung lưu trữ bền vững. Không có thanh toán,
 gửi email hay đặt hàng thật. Không triển khai quản lý giao/hoàn/hủy đơn.
 
-## Cấu trúc Form theo bài QuanLyThuVien
+## Cấu trúc Form 
 
 Thư mục `Shopping/Forms` chứa 8 màn hình: FrmTrangChu, FrmChiTietSanPham,
 FrmGioHang, FrmDangNhap, FrmDangKy, FrmDatHang, FrmKetQua và FrmLichSuDonHang.
