@@ -1,0 +1,134 @@
+﻿using System.Drawing;
+using System.Windows.Forms;
+namespace QuanLyCongTyDuLich.Forms
+{
+    partial class FrmMain
+    {
+        private System.ComponentModel.IContainer components = null;
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components != null) components.Dispose();
+            base.Dispose(disposing);
+        }
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            btnDanhMuc = new Button();
+            btnTour = new Button();
+            btnChuyenLe = new Button();
+            btnDangKyLe = new Button();
+            btnDangKyDoan = new Button();
+            btnPhanCong = new Button();
+            btnKetThuc = new Button();
+            btnThongKe = new Button();
+            btnThoat = new Button();
+            SuspendLayout();
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            Font = new Font("Segoe UI", 10F);
+            ClientSize = new Size(1000, 720);
+            label1.Name = "label1";
+            label1.Location = new Point(80, 30);
+            label1.Size = new Size(840, 27);
+            label1.Text = "CÔNG TY DU LỊCH VĂN HÓA VIỆT";
+            this.Controls.Add(label1);
+            label1.TextAlign = ContentAlignment.MiddleLeft;
+            label1.Font = new Font("Segoe UI", 23F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(0, 51, 102);
+            label1.Size = new Size(840, 65);
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            btnDanhMuc.Name = "btnDanhMuc";
+            btnDanhMuc.Location = new Point(80, 130);
+            btnDanhMuc.Size = new Size(400, 40);
+            btnDanhMuc.Text = "Danh mục";
+            this.Controls.Add(btnDanhMuc);
+            btnDanhMuc.UseVisualStyleBackColor = true;
+            btnDanhMuc.Click += btnDanhMuc_Click;
+            btnDanhMuc.Height = 80;
+            btnTour.Name = "btnTour";
+            btnTour.Location = new Point(520, 130);
+            btnTour.Size = new Size(400, 40);
+            btnTour.Text = "Tour - hành trình";
+            this.Controls.Add(btnTour);
+            btnTour.UseVisualStyleBackColor = true;
+            btnTour.Click += btnTour_Click;
+            btnTour.Height = 80;
+            btnChuyenLe.Name = "btnChuyenLe";
+            btnChuyenLe.Location = new Point(80, 240);
+            btnChuyenLe.Size = new Size(400, 40);
+            btnChuyenLe.Text = "Lịch chuyến khách lẻ";
+            this.Controls.Add(btnChuyenLe);
+            btnChuyenLe.UseVisualStyleBackColor = true;
+            btnChuyenLe.Click += btnChuyenLe_Click;
+            btnChuyenLe.Height = 80;
+            btnDangKyLe.Name = "btnDangKyLe";
+            btnDangKyLe.Location = new Point(520, 240);
+            btnDangKyLe.Size = new Size(400, 40);
+            btnDangKyLe.Text = "Đăng ký khách lẻ";
+            this.Controls.Add(btnDangKyLe);
+            btnDangKyLe.UseVisualStyleBackColor = true;
+            btnDangKyLe.Click += btnDangKyLe_Click;
+            btnDangKyLe.Height = 80;
+            btnDangKyDoan.Name = "btnDangKyDoan";
+            btnDangKyDoan.Location = new Point(80, 350);
+            btnDangKyDoan.Size = new Size(400, 40);
+            btnDangKyDoan.Text = "Đăng ký theo đoàn";
+            this.Controls.Add(btnDangKyDoan);
+            btnDangKyDoan.UseVisualStyleBackColor = true;
+            btnDangKyDoan.Click += btnDangKyDoan_Click;
+            btnDangKyDoan.Height = 80;
+            btnPhanCong.Name = "btnPhanCong";
+            btnPhanCong.Location = new Point(520, 350);
+            btnPhanCong.Size = new Size(400, 40);
+            btnPhanCong.Text = "Phân công hướng dẫn viên";
+            this.Controls.Add(btnPhanCong);
+            btnPhanCong.UseVisualStyleBackColor = true;
+            btnPhanCong.Click += btnPhanCong_Click;
+            btnPhanCong.Height = 80;
+            btnKetThuc.Name = "btnKetThuc";
+            btnKetThuc.Location = new Point(80, 460);
+            btnKetThuc.Size = new Size(400, 40);
+            btnKetThuc.Text = "Kết thúc tour - khảo sát";
+            this.Controls.Add(btnKetThuc);
+            btnKetThuc.UseVisualStyleBackColor = true;
+            btnKetThuc.Click += btnKetThuc_Click;
+            btnKetThuc.Height = 80;
+            btnThongKe.Name = "btnThongKe";
+            btnThongKe.Location = new Point(520, 460);
+            btnThongKe.Size = new Size(400, 40);
+            btnThongKe.Text = "Lương - thống kê";
+            this.Controls.Add(btnThongKe);
+            btnThongKe.UseVisualStyleBackColor = true;
+            btnThongKe.Click += btnThongKe_Click;
+            btnThongKe.Height = 80;
+            btnThoat.Name = "btnThoat";
+            btnThoat.Location = new Point(300, 590);
+            btnThoat.Size = new Size(400, 40);
+            btnThoat.Text = "Thoát";
+            this.Controls.Add(btnThoat);
+            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.Click += btnThoat_Click;
+            btnThoat.Height = 80;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(1000, 720);
+            MinimumSize = new Size(1016, 759);
+            Font = new Font("Segoe UI", 10F);
+            Name = "FrmMain";
+            Text = "Quản lý công ty du lịch Văn Hóa Việt";
+            StartPosition = FormStartPosition.CenterScreen;
+            ResumeLayout(false);
+            PerformLayout();
+        }
+        private Label label1;
+        private Button btnDanhMuc;
+        private Button btnTour;
+        private Button btnChuyenLe;
+        private Button btnDangKyLe;
+        private Button btnDangKyDoan;
+        private Button btnPhanCong;
+        private Button btnKetThuc;
+        private Button btnThongKe;
+        private Button btnThoat;
+    }
+}
