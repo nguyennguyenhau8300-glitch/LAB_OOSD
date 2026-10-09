@@ -1,4 +1,4 @@
-# Bài Lab 6 Quản lý công ty du lịch
+# Bài Lab 5 Quản lý công ty du lịch
 
 ## Thông tin sinh viên
 
