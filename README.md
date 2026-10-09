@@ -4,7 +4,7 @@
 
 - **Họ và tên:** Nguyễn Nguyên Hậu
 - **MSSV:** 1250080049
-- **Tên bài Lab:** Bài 6 – Quản lý công ty du lịch Văn Hóa Việt
+- **Tên bài Lab:** Bài 5 – Quản lý công ty du lịch Văn Hóa Việt
 - **Môn học:** Thực hành Phân tích thiết kế hướng đối tượng
 
 ## Môi trường và phiên bản
@@ -20,7 +20,7 @@
 | Database | `QuanLyCongTyDuLich` |
 | Xác thực | Windows Authentication (`Integrated Security=True`) |
 
-Project hiện dùng .NET 10. Tài liệu Lab tham khảo dùng .NET Framework 4.7.2; khi chạy project này cần môi trường hỗ trợ .NET 10. Có thể dùng CLI bên dưới hoặc Visual Studio hỗ trợ .NET 10 với workload **.NET desktop development**. Cần mạng để tải các gói NuGet trong lần restore đầu tiên.
+Khi chạy project này cần môi trường hỗ trợ .NET 10. Có thể dùng CLI bên dưới hoặc Visual Studio hỗ trợ .NET 10 với workload **.NET desktop development**. Cần mạng để tải các gói NuGet trong lần restore đầu tiên.
 
 ## Nội dung đã thực hiện
 
