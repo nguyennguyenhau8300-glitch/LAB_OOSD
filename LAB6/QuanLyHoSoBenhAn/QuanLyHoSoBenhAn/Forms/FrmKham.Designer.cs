@@ -1,0 +1,15 @@
+﻿namespace QuanLyHoSoBenhAn.Forms;
+partial class FrmKham {
+ private System.ComponentModel.IContainer components=null;
+ protected override void Dispose(bool disposing){if(disposing)components?.Dispose();base.Dispose(disposing);}
+ private ComboBox hs; private ComboBox bs; private CheckBox dinhKy; private TextBox tc; private NumericUpDown tien; private NumericUpDown hen; private Button btnLap; private Button btnTai; private DataGridView grid;
+ private void InitializeComponent(){
+ Text="Tiếp nhận và khám bệnh"; Font=new Font("Segoe UI",10); AutoScaleMode=AutoScaleMode.Dpi; ClientSize=new Size(1180,740); MinimumSize=new Size(1000,680); StartPosition=FormStartPosition.CenterParent;
+ var layout=new TableLayoutPanel{Dock=DockStyle.Fill,RowCount=3,ColumnCount=1};
+ layout.RowStyles.Add(new RowStyle(SizeType.Absolute,55));layout.RowStyles.Add(new RowStyle(SizeType.Absolute,225));layout.RowStyles.Add(new RowStyle(SizeType.Percent,100));
+ layout.Controls.Add(new Label{Text="Tiếp nhận và khám bệnh",Dock=DockStyle.Fill,Font=new Font("Segoe UI",20,FontStyle.Bold),ForeColor=Color.FromArgb(0,51,102),TextAlign=ContentAlignment.MiddleCenter},0,0);
+ var bar=new FlowLayoutPanel{Dock=DockStyle.Fill,AutoScroll=true,Padding=new Padding(12)};layout.Controls.Add(bar,0,1);
+ var area=new Panel{Dock=DockStyle.Fill,Padding=new Padding(10)};layout.Controls.Add(area,0,2);
+ hs=new ComboBox(); hs.Name="hs"; bar.Controls.Add(new Label(){Text="Hồ sơ",AutoSize=true,Margin=new Padding(8,8,2,0)}); hs.Width=175; bar.Controls.Add(hs); hs.DropDownStyle=ComboBoxStyle.DropDownList; bs=new ComboBox(); bs.Name="bs"; bar.Controls.Add(new Label(){Text="Bác sĩ",AutoSize=true,Margin=new Padding(8,8,2,0)}); bs.Width=175; bar.Controls.Add(bs); bs.DropDownStyle=ComboBoxStyle.DropDownList; dinhKy=new CheckBox(); dinhKy.Name="dinhKy"; bar.Controls.Add(new Label(){Text="Định kỳ miễn phí",AutoSize=true,Margin=new Padding(8,8,2,0)}); dinhKy.Width=175; bar.Controls.Add(dinhKy); tc=new TextBox(); tc.Name="tc"; bar.Controls.Add(new Label(){Text="Triệu chứng / sức khỏe",AutoSize=true,Margin=new Padding(8,8,2,0)}); tc.Width=175; bar.Controls.Add(tc); tien=new NumericUpDown(); tien.Name="tien"; bar.Controls.Add(new Label(){Text="Tiền khám",AutoSize=true,Margin=new Padding(8,8,2,0)}); tien.Width=175; bar.Controls.Add(tien); tien.Maximum=100000000; hen=new NumericUpDown(); hen.Name="hen"; bar.Controls.Add(new Label(){Text="Mã hẹn (0 nếu không có)",AutoSize=true,Margin=new Padding(8,8,2,0)}); hen.Width=175; bar.Controls.Add(hen); hen.Maximum=100000000; btnLap=new Button(); btnLap.Name="btnLap"; btnLap.Text="Lập phiếu khám"; btnLap.AutoSize=true; bar.Controls.Add(btnLap); btnTai=new Button(); btnTai.Name="btnTai"; btnTai.Text="Lịch sử khám"; btnTai.AutoSize=true; bar.Controls.Add(btnTai); grid=new DataGridView(); grid.Name="grid"; grid.Dock=DockStyle.Fill; grid.ReadOnly=true; grid.AllowUserToAddRows=false; grid.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.DisplayedCells; grid.SelectionMode=DataGridViewSelectionMode.FullRowSelect; grid.MultiSelect=false; area.Controls.Add(grid); Controls.Add(layout); FormHelper.TrangTri(this, layout, bar, grid);
+ }
+}
