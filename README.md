@@ -20,6 +20,7 @@ Repository lưu các bài Lab từ mô hình lớp và kế thừa trong Java đ
 | Lab 3 | Quản lý khách sạn | Phòng, tiện nghi, đặt/nhận phòng, dịch vụ, trả phòng và thanh toán | [LAB3](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB3/lab3) | [README Lab 3](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB3/README.md) |
 | Lab 4 | Cửa hàng online e-SHOPPING | Sản phẩm, giỏ hàng, đăng nhập, đặt hàng, thanh toán và email giả lập | [LAB4](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB4/lab4) | [README Lab 4](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB4/README.md) |
 | Lab 5 | Quản lý công ty du lịch | Tour, hành trình, khách lẻ/đoàn, phân công HDV, khảo sát, lương và thống kê | [LAB5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB5/LAB5) | [README Lab 5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB5/README.md) |
+| Lab 6 | Quản lý hồ sơ bệnh án | Hồ sơ, lệ phí năm, lịch hẹn, khám định kỳ, xét nghiệm, toa thuốc, thanh toán và danh mục | [LAB6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB6/LAB6) | [README Lab 6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB6/README.md) |
 
 ## 4. Môi trường và phiên bản
 
@@ -30,8 +31,9 @@ Repository lưu các bài Lab từ mô hình lớp và kế thừa trong Java đ
 | Lab 3 | C#, WinForms, .NET 10; Visual Studio 2026 theo README | SQL Server Express; `Microsoft.Data.SqlClient` 7.1.0; database `QuanLyKhachSan` |
 | Lab 4 | C#, WinForms, `net10.0-windows`; SDK 10.0.401 | LocalDB 17.0.4025.3; `Microsoft.Data.SqlClient` 7.0.3; database `EShopping_Prototype` |
 | Lab 5 | C#, WinForms, `net10.0-windows`; SDK 10.0.401 | LocalDB 17.0.4025.3; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyCongTyDuLich` |
+| Lab 6 | C#, WinForms, `net10.0-windows`; .NET 10 SDK | SQL Server LocalDB; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyHoSoBenhAnLAB6` |
 
-Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 Developer Pack và workload **.NET desktop development**. Với Lab 3–5, dùng .NET 10 SDK và Visual Studio hỗ trợ .NET 10. Có thể dùng SSMS để chạy script và kiểm tra dữ liệu SQL Server.
+Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 Developer Pack và workload **.NET desktop development**. Với Lab 3–6, dùng .NET 10 SDK và Visual Studio hỗ trợ .NET 10. Có thể dùng SSMS để chạy script và kiểm tra dữ liệu SQL Server.
 
 ## 5. Nội dung đã thực hiện
 
@@ -74,6 +76,16 @@ Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 
 - Kết nối các form với Service và lớp `Db`; script tạo 16 bảng và dữ liệu mẫu.
 - Bổ sung chế độ `--check-forms` để kiểm tra giao diện và kết quả truy vấn.
 
+### 5.6. Lab 6 – Quản lý hồ sơ bệnh án
+
+- Xây dựng 7 Form theo cấu trúc `Forms`, `Services`, `Data` và `App.config`.
+- Đăng ký bệnh nhân, thu/gia hạn lệ phí năm, cấp hồ sơ và tra cứu lịch sử.
+- Đặt/hủy lịch hẹn; khám điều trị hoặc định kỳ theo quý; chỉ định và ghi kết quả xét nghiệm.
+- Lưu kết luận/toa thuốc, xuất TXT và hoàn tất phiếu sau thanh toán.
+- Quản lý khoa, bác sĩ, thuốc; thống kê lượt khám và tiền đã thu.
+- Gộp cấu trúc 12 bảng, dữ liệu trình diễn và dọn dữ liệu kiểm thử tùy chọn vào `Data/QuanLyHoSoBenhAn.sql`.
+- Có hai chế độ kiểm thử `--verify` và `--verify-catalog`, kèm dọn dữ liệu tạm sau khi chạy.
+
 ## 6. Kết quả
 
 | Bài Lab | Kết quả được mô tả trong mã nguồn / README của bài |
@@ -83,6 +95,7 @@ Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 
 | Lab 3 | Xây dựng các module quản lý khách sạn, kết nối SQL Server và xử lý các nghiệp vụ đặt phòng, dịch vụ, thanh toán. |
 | Lab 4 | README ghi build Release 0 lỗi, 0 cảnh báo; `Verification.txt` ghi 18/18 kiểm tra đạt. |
 | Lab 5 | README ghi build 0 lỗi, 0 cảnh báo; mở 9 form/17 màn hình hoặc tab; kiểm tra lương mẫu và 5 chỉ số thống kê. |
+| Lab 6 | 7 Form, CSDL 12 bảng; bộ dữ liệu 12 bệnh nhân, 18 phiếu khám, 27 xét nghiệm, 12 toa và 10 thanh toán; hai chế độ kiểm thử nghiệp vụ và danh mục. |
 
 Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao diện, kết nối, lương và thống kê; chưa thực hiện đầy đủ 24 test case nghiệp vụ trong tài liệu.
 
@@ -93,12 +106,13 @@ Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao di�
 | Lab 2: không mở được database | Khởi động LocalDB, chạy script tạo CSDL và kiểm tra kết nối trong `App.config`. |
 | Lab 2: thiếu `InitializeComponent`, control hoặc event handler | Kiểm tra cặp file `.cs`/`.Designer.cs`, khai báo control và tên hàm xử lý sự kiện. |
 | Lab 3: lỗi đăng nhập SQL Server | Sửa server/instance và thông tin xác thực trong `Data/Db.cs` theo máy chạy; kiểm tra quyền truy cập CSDL. |
-| Lab 3–5: thiếu `Microsoft.Data.SqlClient` | Restore NuGet trước khi build, kiểm tra phiên bản gói trong `.csproj`. |
+| Lab 3–6: thiếu `Microsoft.Data.SqlClient` | Restore NuGet trước khi build, kiểm tra phiên bản gói trong `.csproj`. |
 | Lab 3: đặt phòng trùng lịch hoặc xóa dữ liệu có khóa ngoại | Kiểm tra lịch phòng và các bản ghi liên quan trước khi thao tác. |
 | Lab 4: script tiếng Việt bị sai ký tự | Mở script UTF-8 trong SSMS hoặc dùng `sqlcmd -f 65001`. |
 | Lab 4: không kết nối được LocalDB | Khởi động instance và kiểm tra `Connection.txt`. |
 | Lab 5: thiếu form khởi động hoặc lớp hỗ trợ | Dùng `FrmMain`, bổ sung `FormHelper` và các file Designer. |
 | Lab 5: filtered index báo lỗi `QUOTED_IDENTIFIER` | Dùng `SET QUOTED_IDENTIFIER ON`, `SET ANSI_NULLS ON`; khi chạy `sqlcmd` thêm `-I`. |
+| Lab 6: chưa có CSDL hoặc thiếu dữ liệu | Chạy toàn bộ `LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/Data/QuanLyHoSoBenhAn.sql`; kiểm tra `App.config`. |
 
 ## 8. Hướng dẫn giảng viên kiểm tra và chạy lại
 
@@ -112,7 +126,7 @@ cd LAB_OOSD
 git switch LAB1
 ```
 
-Thay `LAB1` bằng `LAB2`, `LAB3`, `LAB4` hoặc `LAB5` để xem bài khác. Trước khi chuyển nhánh, lưu các thay đổi đang thực hiện. Có thể chọn nhánh trên GitHub rồi chọn **Code → Download ZIP**.
+Thay `LAB1` bằng `LAB2`, `LAB3`, `LAB4`, `LAB5` hoặc `LAB6` để xem bài khác. Trước khi chuyển nhánh, lưu các thay đổi đang thực hiện. Có thể chọn nhánh trên GitHub rồi chọn **Code → Download ZIP**.
 
 ### 8.2. Lab 1
 
@@ -178,3 +192,27 @@ Get-Content '.\KiemTraForms\forms.log'
 ```
 
 Đối chiếu đủ 9 form, 17 màn hình/tab và kết quả lương mẫu tháng 9/2026: HDV01 **10.500.000 đồng**, HDV02 **11.500.000 đồng**, HDV03 **10.500.000 đồng**. Tham khảo README Lab 5 để kiểm tra thống kê và các điều kiện ngày của tour.
+
+### 8.7. Lab 6
+
+Chuyển sang nhánh `LAB6`, mở PowerShell tại thư mục gốc repository:
+
+```powershell
+git switch LAB6
+SqlLocalDB start MSSQLLocalDB
+sqlcmd -S '(localdb)\MSSQLLocalDB' -E -C -b -f 65001 -i '.\LAB6\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn\Data\QuanLyHoSoBenhAn.sql'
+dotnet restore '.\LAB6\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn.slnx'
+dotnet build '.\LAB6\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn.slnx' -c Release
+dotnet run --project '.\LAB6\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn.csproj' -c Release
+```
+
+Script gộp tạo/nâng cấp CSDL và nạp dữ liệu trình diễn, có thể chạy lại mà không thêm trùng bộ dữ liệu. Công tắc `@DonDuLieuKiemThu` mặc định là `0`; chỉ đổi sang `1` khi cần dọn hồ sơ `LAB6_TEST_` cũ cùng dữ liệu phụ thuộc. Nếu dùng instance khác, sửa `Data Source` trong `App.config`.
+
+Kiểm tra luồng đăng ký → hẹn khám → lập phiếu → xét nghiệm → kết luận/toa → thanh toán; thử thêm/sửa/xóa danh mục khoa, bác sĩ và thuốc. Chạy kiểm thử tự động:
+
+```powershell
+dotnet run --project '.\LAB6\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn.csproj' -c Release -- --verify
+dotnet run --project '.\LAB6\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn.csproj' -c Release -- --verify-catalog
+```
+
+Nhật ký `results.txt` và `catalogue-results.txt` nằm trong `bin/Release/net10.0-windows/Verification/` của dự án. Xem [README Lab 6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB6/README.md) để biết cấu trúc, quy tắc nghiệp vụ và hướng dẫn chi tiết.
