@@ -1,180 +1,178 @@
-# LAB_OOSD – Tổng hợp các bài thực hành hướng đối tượng
+# LAB6 – Quản lý hồ sơ bệnh án
+
+Bài thực hành phân tích, thiết kế hướng đối tượng và xây dựng ứng dụng C# Windows Forms kết nối SQL Server, dựa trên đề **Quản lý hồ sơ bệnh án của bệnh nhân**.
 
 ## 1. Thông tin sinh viên
 
-- **Họ và tên:** Nguyễn Nguyên Hậu
-- **MSSV:** 1250080049
-- **Lớp:** 12_ĐH_CNPM1
-- **Nội dung:** Tổng hợp các bài thực hành lập trình, phân tích và thiết kế hướng đối tượng.
+| Nội dung | Thông tin |
+|---|---|
+| Họ và tên | Nguyễn Nguyên Hậu |
+| MSSV | 1250080049 |
+| Lớp | 12_ĐH_CNPM1 |
+| Bài thực hành | LAB6 |
+| Nhánh mã nguồn | `LAB6` |
 
-## 2. Giới thiệu
+## 2. Mục tiêu
 
-Repository lưu các bài Lab từ mô hình lớp và kế thừa trong Java đến các ứng dụng quản lý bằng C# Windows Forms kết nối SQL Server. Mỗi bài được lưu trên một nhánh riêng; nhánh `main` chứa README tổng để tra cứu nội dung và hướng dẫn kiểm tra.
+- Phân tích bệnh nhân, hồ sơ bệnh án, lệ phí năm, lịch hẹn, khám bệnh, xét nghiệm, toa thuốc và thanh toán.
+- Xác định lớp, thuộc tính định danh, liên kết, bản số, Actor và Use Case.
+- Thiết kế Class Diagram, Use Case, Activity và Sequence Diagram.
+- Xây dựng WinForms theo các lớp giao diện, nghiệp vụ và truy cập dữ liệu.
+- Áp dụng khóa chính, khóa ngoại, UNIQUE và transaction cho dữ liệu nhiều bảng.
 
-## 3. Danh sách các bài Lab
+## 3. Chức năng
 
-| Bài Lab | Tên bài | Nội dung chính | Mã nguồn | README chi tiết |
-| --- | --- | --- | --- | --- |
-| Lab 1 | Các lớp hình học | Điểm, tam giác, tứ giác, ellipse; lớp trừu tượng, kế thừa và đa hình | [LAB1](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB1/LAB1/bai1) | [README Lab 1](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB1/README.md) |
-| Lab 2 | Quản lý thư viện | Sách, độc giả, danh mục, mượn trả, phiếu phạt và thống kê | [LAB2](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB2/lab2) | [README Lab 2](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB2/README.md) |
-| Lab 3 | Quản lý khách sạn | Phòng, tiện nghi, đặt/nhận phòng, dịch vụ, trả phòng và thanh toán | [LAB3](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB3/lab3) | [README Lab 3](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB3/README.md) |
-| Lab 4 | Cửa hàng online e-SHOPPING | Sản phẩm, giỏ hàng, đăng nhập, đặt hàng, thanh toán và email giả lập | [LAB4](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB4/lab4) | [README Lab 4](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB4/README.md) |
-| Lab 5 | Quản lý công ty du lịch | Tour, hành trình, khách lẻ/đoàn, phân công HDV, khảo sát, lương và thống kê | [LAB5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB5/LAB5) | [README Lab 5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB5/README.md) |
+| Module | Chức năng chính |
+|---|---|
+| Đăng ký và hồ sơ | Nhập thông tin bệnh nhân, chọn ảnh, thu lệ phí và cấp hồ sơ |
+| Lệ phí năm | Gia hạn và xem lịch sử đóng lệ phí |
+| Tra cứu | Tìm hồ sơ theo mã, họ tên hoặc điện thoại; xem lịch sử khám |
+| Lịch hẹn | Đặt, xem và hủy lịch; kiểm tra bác sĩ trùng lịch theo phút |
+| Khám bệnh | Lập phiếu khám điều trị hoặc khám định kỳ theo quý |
+| Xét nghiệm | Chỉ định xét nghiệm, ghi nhận và xem kết quả |
+| Toa thuốc | Nhập kết luận, soạn dòng thuốc, lưu, xem và xuất toa TXT |
+| Thanh toán | Tính tiền khám cộng xét nghiệm và hoàn tất phiếu |
+| Danh mục | Tìm kiếm, thêm, sửa, xóa khoa, bác sĩ và thuốc |
+| Thống kê | Xem số lượt khám và tiền đã thu theo hồ sơ |
 
-## 4. Môi trường và phiên bản
+Các quy tắc chính:
 
-| Bài Lab | Ngôn ngữ / nền tảng | Cơ sở dữ liệu và thư viện |
-| --- | --- | --- |
-| Lab 1 | Java, chương trình console; cần JDK có `javac` và `java` | Không dùng CSDL; repository chưa ghi phiên bản JDK |
-| Lab 2 | C#, WinForms, .NET Framework 4.7.2 | SQL Server LocalDB; `System.Data.SqlClient`; database `QuanLyThuVienDB` |
-| Lab 3 | C#, WinForms, .NET 10; Visual Studio 2026 theo README | SQL Server Express; `Microsoft.Data.SqlClient` 7.1.0; database `QuanLyKhachSan` |
-| Lab 4 | C#, WinForms, `net10.0-windows`; SDK 10.0.401 | LocalDB 17.0.4025.3; `Microsoft.Data.SqlClient` 7.0.3; database `EShopping_Prototype` |
-| Lab 5 | C#, WinForms, `net10.0-windows`; SDK 10.0.401 | LocalDB 17.0.4025.3; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyCongTyDuLich` |
+- Đăng ký lần đầu ghi bệnh nhân, hồ sơ và lệ phí trong cùng transaction.
+- Khám định kỳ miễn tiền khám khi lệ phí còn hiệu lực; mỗi hồ sơ có tối đa một lần định kỳ trong một quý.
+- Phiếu khám lưu khoa điều trị tại thời điểm khám, giữ được lịch sử khi bác sĩ chuyển khoa.
+- Phải có đủ kết quả xét nghiệm trước khi lưu kết luận/toa thuốc.
+- Có thể hoàn tất khám không dùng thuốc; trường hợp này không tạo toa rỗng.
+- Phiếu chỉ chuyển sang **Đã thanh toán** sau khi ghi nhận thanh toán thành công.
+- Không xóa danh mục đang được lịch hẹn, phiếu khám hoặc toa thuốc tham chiếu.
 
-Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 Developer Pack và workload **.NET desktop development**. Với Lab 3–5, dùng .NET 10 SDK và Visual Studio hỗ trợ .NET 10. Có thể dùng SSMS để chạy script và kiểm tra dữ liệu SQL Server.
+## 4. Công nghệ
 
-## 5. Nội dung đã thực hiện
+| Thành phần | Công nghệ |
+|---|---|
+| Ngôn ngữ | C# |
+| Giao diện | Windows Forms |
+| Nền tảng | .NET 10, `net10.0-windows` |
+| Cơ sở dữ liệu | SQL Server / SQL Server LocalDB |
+| Thư viện kết nối | `Microsoft.Data.SqlClient` 7.1.1 |
+| Cấu hình kết nối | `App.config` |
 
-### 5.1. Lab 1 – Các lớp hình học
+## 5. Cấu trúc thư mục
 
-- Xây dựng các lớp `CDiem`, `CHinhVe`, `CTamGiac`, `CTuGiac`, `CEllipse`.
-- Sử dụng lớp trừu tượng và kế thừa để định nghĩa các loại hình.
-- Nhập tọa độ, bán trục; tính chu vi và diện tích.
-- Sử dụng kiểu `CHinhVe` để gọi các phương thức của từng loại hình qua đa hình.
-- `Main.java` cung cấp chương trình console nhập và in kết quả của ba hình.
+```text
+LAB_OOSD/
+├── README.md
+└── LAB6/
+    └── QuanLyHoSoBenhAn/
+        ├── QuanLyHoSoBenhAn.slnx
+        └── QuanLyHoSoBenhAn/
+            ├── Forms/                  # Các Form và file Designer.cs
+            ├── Services/               # BenhAnService, DanhMucService, Models
+            ├── Data/
+            │   ├── DB.cs               # Kết nối, truy vấn, tham số SQL
+            │   └── QuanLyHoSoBenhAn.sql # SQL tổng hợp của LAB6
+            ├── App.config
+            ├── Program.cs
+            ├── Verification.cs         # Kiểm thử nghiệp vụ
+            ├── VerificationCleanup.cs  # Dọn dữ liệu của lần kiểm thử
+            ├── DanhMucVerification.cs  # Kiểm thử danh mục
+            └── QuanLyHoSoBenhAn.csproj
+```
 
-### 5.2. Lab 2 – Quản lý thư viện
+Code nằm trong `LAB6`; SQL tổng hợp nằm trong thư mục `Data` của dự án, README đặt ở thư mục gốc. Các tài liệu Word và draw.io được bàn giao riêng.
 
-- Thiết kế CSDL gồm 9 bảng, khóa chính, khóa ngoại và dữ liệu mẫu.
-- Xây dựng các form danh mục, sách, độc giả, mượn trả và thống kê.
-- Kết nối SQL Server bằng lớp `Db`, hiển thị dữ liệu trên DataGridView.
-- Xử lý thêm, sửa, xóa và kiểm tra dữ liệu nhập; sử dụng tham số SQL.
+## 6. Cài đặt và chạy
 
-### 5.3. Lab 3 – Quản lý khách sạn
-
-- Quản lý danh mục, phòng, tiện nghi và người lưu trú.
-- Đặt/nhận phòng, kiểm tra trùng lịch và sức chứa.
-- Ghi nhận dịch vụ, tính tiền phòng, lập hóa đơn, thanh toán và trả phòng.
-- Dùng stored procedure cho các nghiệp vụ đặt phòng, dịch vụ và thanh toán.
-- Thống kê doanh thu, hóa đơn và tình trạng phòng.
-
-### 5.4. Lab 4 – Cửa hàng online e-SHOPPING
-
-- Xây dựng 8 màn hình WinForms và danh mục 20 sản phẩm thuộc 4 nhóm.
-- Đăng ký, đăng nhập, quản lý giỏ hàng và lập đơn hàng.
-- Tính phí giao hàng, thanh toán giả lập, xử lý timeout/đối soát và email giả lập.
-- Lưu dữ liệu vào 3 bảng và dùng view cho danh mục sản phẩm.
-- Kèm báo cáo, sơ đồ và chức năng kiểm tra `--verify`.
-
-### 5.5. Lab 5 – Quản lý công ty du lịch
-
-- Hoàn thiện 9 form và các file `Designer.cs` theo giao diện tài liệu Lab.
-- Quản lý danh mục, tour/hành trình, chuyến khách lẻ và đăng ký khách lẻ/đoàn.
-- Phân công HDV, kết thúc tour, khảo sát, tính lương và thống kê.
-- Kết nối các form với Service và lớp `Db`; script tạo 16 bảng và dữ liệu mẫu.
-- Bổ sung chế độ `--check-forms` để kiểm tra giao diện và kết quả truy vấn.
-
-## 6. Kết quả
-
-| Bài Lab | Kết quả được mô tả trong mã nguồn / README của bài |
-| --- | --- |
-| Lab 1 | Có chương trình nhập ba loại hình và in chu vi, diện tích; thao tác `ve()` in thông báo trong console. |
-| Lab 2 | Xây dựng CSDL 9 bảng, các form quản lý thư viện và kết nối LocalDB. |
-| Lab 3 | Xây dựng các module quản lý khách sạn, kết nối SQL Server và xử lý các nghiệp vụ đặt phòng, dịch vụ, thanh toán. |
-| Lab 4 | README ghi build Release 0 lỗi, 0 cảnh báo; `Verification.txt` ghi 18/18 kiểm tra đạt. |
-| Lab 5 | README ghi build 0 lỗi, 0 cảnh báo; mở 9 form/17 màn hình hoặc tab; kiểm tra lương mẫu và 5 chỉ số thống kê. |
-
-Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao diện, kết nối, lương và thống kê; chưa thực hiện đầy đủ 24 test case nghiệp vụ trong tài liệu.
-
-## 7. Lỗi gặp phải và cách khắc phục
-
-| Bài / tình huống | Cách khắc phục |
-| --- | --- |
-| Lab 2: không mở được database | Khởi động LocalDB, chạy script tạo CSDL và kiểm tra kết nối trong `App.config`. |
-| Lab 2: thiếu `InitializeComponent`, control hoặc event handler | Kiểm tra cặp file `.cs`/`.Designer.cs`, khai báo control và tên hàm xử lý sự kiện. |
-| Lab 3: lỗi đăng nhập SQL Server | Sửa server/instance và thông tin xác thực trong `Data/Db.cs` theo máy chạy; kiểm tra quyền truy cập CSDL. |
-| Lab 3–5: thiếu `Microsoft.Data.SqlClient` | Restore NuGet trước khi build, kiểm tra phiên bản gói trong `.csproj`. |
-| Lab 3: đặt phòng trùng lịch hoặc xóa dữ liệu có khóa ngoại | Kiểm tra lịch phòng và các bản ghi liên quan trước khi thao tác. |
-| Lab 4: script tiếng Việt bị sai ký tự | Mở script UTF-8 trong SSMS hoặc dùng `sqlcmd -f 65001`. |
-| Lab 4: không kết nối được LocalDB | Khởi động instance và kiểm tra `Connection.txt`. |
-| Lab 5: thiếu form khởi động hoặc lớp hỗ trợ | Dùng `FrmMain`, bổ sung `FormHelper` và các file Designer. |
-| Lab 5: filtered index báo lỗi `QUOTED_IDENTIFIER` | Dùng `SET QUOTED_IDENTIFIER ON`, `SET ANSI_NULLS ON`; khi chạy `sqlcmd` thêm `-I`. |
-
-## 8. Hướng dẫn giảng viên kiểm tra và chạy lại
-
-### 8.1. Lấy đúng bài Lab
-
-Clone repository và chuyển sang nhánh tương ứng. Ví dụ:
+### Bước 1 – Lấy đúng nhánh LAB6
 
 ```powershell
-git clone https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD.git
+git clone --branch LAB6 --single-branch https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD.git
 cd LAB_OOSD
-git switch LAB1
 ```
 
-Thay `LAB1` bằng `LAB2`, `LAB3`, `LAB4` hoặc `LAB5` để xem bài khác. Trước khi chuyển nhánh, lưu các thay đổi đang thực hiện. Có thể chọn nhánh trên GitHub rồi chọn **Code → Download ZIP**.
+### Bước 2 – Khởi tạo cơ sở dữ liệu
 
-### 8.2. Lab 1
+Cần Windows, .NET 10 SDK và SQL Server LocalDB hoặc SQL Server. Dùng SSMS mở **[QuanLyHoSoBenhAn.sql](LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/Data/QuanLyHoSoBenhAn.sql)** rồi chạy toàn bộ tệp.
 
-Trong nhánh `LAB1`, chạy:
+Tệp SQL duy nhất gồm:
+
+1. Tạo hoặc nâng cấp CSDL `QuanLyHoSoBenhAnLAB6`, các bảng, khóa và ràng buộc.
+2. Nạp dữ liệu trình diễn; có thể chạy lại mà không tạo trùng bộ dữ liệu.
+3. Dọn hồ sơ kiểm thử cũ theo công tắc `@DonDuLieuKiemThu`, mặc định `0` là **không dọn**.
+4. Hiển thị số lượng bản ghi sau khi khởi tạo.
+
+Nếu có `sqlcmd`, có thể chạy từ thư mục gốc:
 
 ```powershell
-cd LAB1/bai1
-javac -encoding UTF-8 Main.java
-java Main
+sqlcmd -S "(localdb)\MSSQLLocalDB" -E -C -b -f 65001 -i "LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/Data/QuanLyHoSoBenhAn.sql"
 ```
 
-Biên dịch riêng `Main.java` vì file này đã chứa các lớp hỗ trợ cùng tên với các file Java khác. Nhập tọa độ tam giác, tứ giác và bán trục ellipse theo lời nhắc; đối chiếu chu vi, diện tích được in ra.
+Khi muốn dọn hồ sơ kiểm thử cũ, đổi `@DonDuLieuKiemThu = 0` thành `1` ở phần 3. Phần này xóa hồ sơ có tên bắt đầu bằng `LAB6_TEST_` và dữ liệu phụ thuộc, không phải chức năng xóa bệnh nhân thông thường.
 
-### 8.3. Lab 2
+### Bước 3 – Kiểm tra cấu hình
 
-1. Chuyển sang nhánh `LAB2`.
-2. Chạy `lab2/QuanLyThuVienDB.sql` trên SQL Server LocalDB.
-3. Kiểm tra chuỗi kết nối trong `lab2/QuanLyThuVien/QuanLyThuVien/App.config`.
-4. Mở `lab2/QuanLyThuVien/QuanLyThuVien.slnx`, build rồi nhấn **F5**.
-5. Kiểm tra danh mục, sách, độc giả, mượn trả và thống kê theo README Lab 2.
+Mở `LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/App.config`:
 
-### 8.4. Lab 3
+```xml
+<add name="QuanLyHoSoBenhAnDB"
+     connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=QuanLyHoSoBenhAnLAB6;Integrated Security=True;Encrypt=True;TrustServerCertificate=True"
+     providerName="Microsoft.Data.SqlClient" />
+```
 
-1. Chuyển sang nhánh `LAB3`.
-2. Chạy `lab3/QuanLyKhachSan/QuanLyKhachSanDB.sql` trên SQL Server.
-3. Sửa chuỗi kết nối trong `lab3/QuanLyKhachSan/QuanLyKhachSan/Data/Db.cs` theo instance và thông tin xác thực của máy kiểm tra.
-4. Mở `lab3/QuanLyKhachSan/QuanLyKhachSan.slnx`, restore NuGet, build rồi nhấn **F5**.
-5. Thử quy trình đặt phòng → nhận phòng → dùng dịch vụ → trả phòng/thanh toán; kiểm tra nhánh trùng lịch và báo cáo.
+Nếu dùng SQL Server khác, sửa `Data Source` theo tên instance đang sử dụng. Tài khoản kết nối cần quyền truy cập CSDL.
 
-### 8.5. Lab 4
+### Bước 4 – Build và chạy
 
-1. Chuyển sang nhánh `LAB4`, mở `lab4/Shopping.slnx`.
-2. Khởi động LocalDB và kiểm tra `Shopping/Connection.txt` trong thư mục `lab4`.
-3. Restore, build Release rồi chạy ứng dụng; chương trình tự khởi tạo CSDL.
-4. Đăng nhập `demo` / `Demo@123`, kiểm tra 4 nhóm sản phẩm, giỏ hàng, đặt hàng và các kịch bản thanh toán giả lập.
-5. Chạy lại kiểm tra từ thư mục `lab4` sau khi build Release:
+Mở solution bằng Visual Studio hỗ trợ .NET 10, restore NuGet rồi chạy dự án. Hoặc dùng PowerShell:
 
 ```powershell
-.\Shopping\bin\Release\net10.0-windows\Shopping.exe --verify verification-moi.txt
+dotnet restore "LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn.slnx"
+dotnet build "LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn.slnx" -c Release
+dotnet run --project "LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn.csproj" -c Release
 ```
 
-Lệnh kiểm tra tạo thêm đơn demo. Xem README Lab 4 để đối chiếu kết quả và kiểm tra email trong thư mục `Outbox` cạnh EXE.
+## 7. Dữ liệu trình diễn và luồng sử dụng
 
-### 8.6. Lab 5
+Trên CSDL mới, script tạo bộ dữ liệu:
 
-Chuyển sang nhánh `LAB5`, mở PowerShell tại `LAB5/QuanLyCongTyDuLich`:
+| Dữ liệu | Số lượng |
+|---|---:|
+| Bệnh nhân / hồ sơ | 12 / 12 |
+| Phiếu khám | 18 |
+| Xét nghiệm | 27 |
+| Toa thuốc | 12 |
+| Thanh toán | 10 |
+
+Bộ dữ liệu có lệ phí còn hạn/hết hạn, lịch hẹn và phiếu khám ở nhiều trạng thái. Ngày khám trình diễn lấy mốc 16/10/2026; lịch hẹn dựa trên ngày chạy script lần đầu. Số lượng trong CSDL đang sử dụng có thể cao hơn khi thêm dữ liệu mới.
+
+Luồng chính:
+
+```text
+Đăng ký và đóng lệ phí → Cấp hồ sơ → Đặt lịch hẹn nếu cần
+→ Lập phiếu khám → Chỉ định và cập nhật xét nghiệm nếu cần
+→ Lưu kết luận/toa thuốc → Thanh toán → Tra cứu lịch sử
+```
+
+Để chỉnh khoa, bác sĩ hoặc thuốc, chọn **Danh mục** ở màn hình chính. Chọn loại danh mục, tìm/chọn dòng để sửa hoặc nhấn **Thêm mới**, sau đó **Lưu**.
+
+## 8. Kiểm thử
+
+Chạy sau khi khởi tạo CSDL và cấu hình kết nối:
 
 ```powershell
-SqlLocalDB start MSSQLLocalDB
-sqlcmd -S '(localdb)\MSSQLLocalDB' -E -I -b -f 65001 -i '.\QuanLyCongTyDuLich\Data\QuanLyCongTyDuLich.sql'
-dotnet restore '.\QuanLyCongTyDuLich\QuanLyCongTyDuLich.csproj'
-dotnet build '.\QuanLyCongTyDuLich\QuanLyCongTyDuLich.csproj' --no-restore
-dotnet run --project '.\QuanLyCongTyDuLich\QuanLyCongTyDuLich.csproj' --no-build
+# Kiểm thử nghiệp vụ
+dotnet run --project "LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn.csproj" -c Release -- --verify
+
+# Kiểm thử danh mục
+dotnet run --project "LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn.csproj" -c Release -- --verify-catalog
 ```
 
-Script Lab 5 tạo lại các bảng và dữ liệu mẫu, nên chỉ chạy khi cần khởi tạo/reset CSDL. Nếu instance chưa có, chạy `SqlLocalDB create MSSQLLocalDB` trước khi khởi động.
+Hai chế độ kiểm tra đăng ký/thu phí, khám theo quý, lịch hẹn, xét nghiệm, toa thuốc, thanh toán, rollback và CRUD danh mục. Chúng tạo dữ liệu tạm và có bước dọn dữ liệu kiểm thử sau khi chạy.
 
-Kiểm tra tự động các form:
+Nhật ký nằm trong `bin/Release/net10.0-windows/Verification/` của dự án:
 
-```powershell
-dotnet run --project '.\QuanLyCongTyDuLich\QuanLyCongTyDuLich.csproj' --no-build -- --check-forms '.\KiemTraForms'
-Get-Content '.\KiemTraForms\forms.log'
-```
+- `results.txt`: kết quả kiểm thử nghiệp vụ.
+- `catalogue-results.txt`: kết quả kiểm thử danh mục.
 
-Đối chiếu đủ 9 form, 17 màn hình/tab và kết quả lương mẫu tháng 9/2026: HDV01 **10.500.000 đồng**, HDV02 **11.500.000 đồng**, HDV03 **10.500.000 đồng**. Tham khảo README Lab 5 để kiểm tra thống kê và các điều kiện ngày của tour.
+## 9. Phạm vi bài lab
+
+Ứng dụng phục vụ mô phỏng nghiệp vụ và học tập. Chưa triển khai đăng nhập/phân quyền, lịch khám theo khoảng thời lượng, quản lý kho/cấp phát thuốc hoặc phản ứng phụ có cấu trúc. Ảnh bệnh nhân là tùy chọn trong phiên bản này. Thông tin thuốc, liều dùng và mức phí trong dữ liệu trình diễn không dùng cho điều trị thực tế.
