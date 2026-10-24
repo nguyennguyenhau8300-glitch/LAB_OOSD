@@ -21,6 +21,7 @@ Repository lưu các bài Lab từ mô hình lớp và kế thừa trong Java đ
 | Lab 4 | Cửa hàng online e-SHOPPING | Sản phẩm, giỏ hàng, đăng nhập, đặt hàng, thanh toán và email giả lập | [LAB4](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB4/lab4) | [README Lab 4](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB4/README.md) |
 | Lab 5 | Quản lý công ty du lịch | Tour, hành trình, khách lẻ/đoàn, phân công HDV, khảo sát, lương và thống kê | [LAB5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB5/LAB5) | [README Lab 5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB5/README.md) |
 | Lab 6 | Quản lý hồ sơ bệnh án | Hồ sơ, lệ phí năm, lịch hẹn, khám định kỳ, xét nghiệm, toa thuốc, thanh toán và danh mục | [LAB6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB6/LAB6) | [README Lab 6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB6/README.md) |
+| Lab 7 | Quản lý nhân sự công ty sơn Đông Á | Hồ sơ, tuyển dụng/thử việc, hợp đồng, chế độ, chấm công, thưởng phạt và lương tháng | [LAB7](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB7/LAB7/QuanLyNhanSu) | [README Lab 7](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB7/README.md) |
 
 ## 4. Môi trường và phiên bản
 
@@ -32,8 +33,9 @@ Repository lưu các bài Lab từ mô hình lớp và kế thừa trong Java đ
 | Lab 4 | C#, WinForms, `net10.0-windows`; SDK 10.0.401 | LocalDB 17.0.4025.3; `Microsoft.Data.SqlClient` 7.0.3; database `EShopping_Prototype` |
 | Lab 5 | C#, WinForms, `net10.0-windows`; SDK 10.0.401 | LocalDB 17.0.4025.3; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyCongTyDuLich` |
 | Lab 6 | C#, WinForms, `net10.0-windows`; .NET 10 SDK | SQL Server LocalDB; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyHoSoBenhAnLAB6` |
+| Lab 7 | C#, WinForms, `net10.0-windows`; .NET 10 SDK | SQL Server LocalDB; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyNhanSuLAB7` |
 
-Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 Developer Pack và workload **.NET desktop development**. Với Lab 3–6, dùng .NET 10 SDK và Visual Studio hỗ trợ .NET 10. Có thể dùng SSMS để chạy script và kiểm tra dữ liệu SQL Server.
+Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 Developer Pack và workload **.NET desktop development**. Với Lab 3–7, dùng .NET 10 SDK và Visual Studio hỗ trợ .NET 10. Có thể dùng SSMS để chạy script và kiểm tra dữ liệu SQL Server.
 
 ## 5. Nội dung đã thực hiện
 
@@ -86,6 +88,16 @@ Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 
 - Gộp cấu trúc 12 bảng, dữ liệu trình diễn và dọn dữ liệu kiểm thử tùy chọn vào `Data/QuanLyHoSoBenhAn.sql`.
 - Có hai chế độ kiểm thử `--verify` và `--verify-catalog`, kèm dọn dữ liệu tạm sau khi chạy.
 
+### 5.7. Lab 7 – Quản lý nhân sự công ty sơn Đông Á
+
+- Tổ chức đúng 6 nhóm nghiệp vụ: hồ sơ/danh mục; tuyển dụng–thử việc–hợp đồng; lương–chức vụ–bảo hiểm; phân công–chấm công–phụ trội; thưởng phạt–thu chi; tính/chốt lương tháng.
+- Màn hình chính có 6 nút mở 6 Form riêng, mỗi Form có `.cs`/`.Designer.cs`; dùng chung `FrmChucNang`, `FrmEditor`, `FrmTable` và `FormHelper` theo cấu trúc LAB6.
+- Giữ .NET 10; Form gọi `NhanSuService`, Service dùng `Db`; SQL tạo/nạp mẫu nằm trong `Data/QuanLyNhanSu.sql`.
+- Thiết kế 17 bảng, 19 khóa ngoại; nạp đủ dữ liệu cho 16 màn hình con của tháng 09 và 10/2026, gồm hai bảng lương nháp và phiếu thu/chi.
+- Kiểm tra thử việc, hợp đồng, bảo hiểm, ca/giờ công, phụ trội, quyết định thưởng phạt; tính và chốt lương trong transaction, bảo vệ tháng đã chốt.
+- Kèm báo cáo Word 66 trang với 33 sơ đồ UML vector, 9 ảnh giao diện, 5 mẫu phiếu; báo cáo kết thúc ở mục 6.4.
+- Có các chế độ `--verify` và `--verify-ui` để kiểm tra nghiệp vụ, điều hướng và dữ liệu hiển thị.
+
 ## 6. Kết quả
 
 | Bài Lab | Kết quả được mô tả trong mã nguồn / README của bài |
@@ -96,6 +108,7 @@ Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 
 | Lab 4 | README ghi build Release 0 lỗi, 0 cảnh báo; `Verification.txt` ghi 18/18 kiểm tra đạt. |
 | Lab 5 | README ghi build 0 lỗi, 0 cảnh báo; mở 9 form/17 màn hình hoặc tab; kiểm tra lương mẫu và 5 chỉ số thống kê. |
 | Lab 6 | 7 Form, CSDL 12 bảng; bộ dữ liệu 12 bệnh nhân, 18 phiếu khám, 27 xét nghiệm, 12 toa và 10 thanh toán; hai chế độ kiểm thử nghiệp vụ và danh mục. |
+| Lab 7 | 6 nhóm chức năng, 16 màn hình con; CSDL 17 bảng/19 FK; 240 phân công, 240 dòng công, 2 phiếu thu/chi, 2 bảng lương nháp/6 chi tiết. Lần kiểm tra 24/10/2026: build 0 lỗi/0 cảnh báo, 36/36 nghiệp vụ và 57/57 giao diện đạt. |
 
 Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao diện, kết nối, lương và thống kê; chưa thực hiện đầy đủ 24 test case nghiệp vụ trong tài liệu.
 
@@ -106,13 +119,14 @@ Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao di�
 | Lab 2: không mở được database | Khởi động LocalDB, chạy script tạo CSDL và kiểm tra kết nối trong `App.config`. |
 | Lab 2: thiếu `InitializeComponent`, control hoặc event handler | Kiểm tra cặp file `.cs`/`.Designer.cs`, khai báo control và tên hàm xử lý sự kiện. |
 | Lab 3: lỗi đăng nhập SQL Server | Sửa server/instance và thông tin xác thực trong `Data/Db.cs` theo máy chạy; kiểm tra quyền truy cập CSDL. |
-| Lab 3–6: thiếu `Microsoft.Data.SqlClient` | Restore NuGet trước khi build, kiểm tra phiên bản gói trong `.csproj`. |
+| Lab 3–7: thiếu `Microsoft.Data.SqlClient` | Restore NuGet trước khi build, kiểm tra phiên bản gói trong `.csproj`. |
 | Lab 3: đặt phòng trùng lịch hoặc xóa dữ liệu có khóa ngoại | Kiểm tra lịch phòng và các bản ghi liên quan trước khi thao tác. |
 | Lab 4: script tiếng Việt bị sai ký tự | Mở script UTF-8 trong SSMS hoặc dùng `sqlcmd -f 65001`. |
 | Lab 4: không kết nối được LocalDB | Khởi động instance và kiểm tra `Connection.txt`. |
 | Lab 5: thiếu form khởi động hoặc lớp hỗ trợ | Dùng `FrmMain`, bổ sung `FormHelper` và các file Designer. |
 | Lab 5: filtered index báo lỗi `QUOTED_IDENTIFIER` | Dùng `SET QUOTED_IDENTIFIER ON`, `SET ANSI_NULLS ON`; khi chạy `sqlcmd` thêm `-I`. |
 | Lab 6: chưa có CSDL hoặc thiếu dữ liệu | Chạy toàn bộ `LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/Data/QuanLyHoSoBenhAn.sql`; kiểm tra `App.config`. |
+| Lab 7: Form phân công, thu chi hoặc lương trống | Chạy toàn bộ `LAB7/QuanLyNhanSu/QuanLyNhanSu/Data/QuanLyNhanSu.sql`, chọn tháng 09 hoặc 10/2026 rồi Tải lại; kiểm tra `NhanSuDB` trong `App.config`. |
 
 ## 8. Hướng dẫn giảng viên kiểm tra và chạy lại
 
@@ -126,7 +140,7 @@ cd LAB_OOSD
 git switch LAB1
 ```
 
-Thay `LAB1` bằng `LAB2`, `LAB3`, `LAB4`, `LAB5` hoặc `LAB6` để xem bài khác. Trước khi chuyển nhánh, lưu các thay đổi đang thực hiện. Có thể chọn nhánh trên GitHub rồi chọn **Code → Download ZIP**.
+Thay `LAB1` bằng `LAB2`, `LAB3`, `LAB4`, `LAB5`, `LAB6` hoặc `LAB7` để xem bài khác. Trước khi chuyển nhánh, lưu các thay đổi đang thực hiện. Có thể chọn nhánh trên GitHub rồi chọn **Code → Download ZIP**.
 
 ### 8.2. Lab 1
 
@@ -216,3 +230,29 @@ dotnet run --project '.\LAB6\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn\QuanLyHoSoBenhAn.
 ```
 
 Nhật ký `results.txt` và `catalogue-results.txt` nằm trong `bin/Release/net10.0-windows/Verification/` của dự án. Xem [README Lab 6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB6/README.md) để biết cấu trúc, quy tắc nghiệp vụ và hướng dẫn chi tiết.
+
+### 8.8. Lab 7
+
+Chuyển sang nhánh `LAB7`, mở PowerShell tại thư mục gốc repository:
+
+```powershell
+git switch LAB7
+SqlLocalDB start MSSQLLocalDB
+sqlcmd -S '(localdb)\MSSQLLocalDB' -E -C -b -f 65001 -i '.\LAB7\QuanLyNhanSu\QuanLyNhanSu\Data\QuanLyNhanSu.sql'
+dotnet restore '.\LAB7\QuanLyNhanSu\QuanLyNhanSu.slnx'
+dotnet build '.\LAB7\QuanLyNhanSu\QuanLyNhanSu.slnx' -c Release
+dotnet run --project '.\LAB7\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu.csproj' -c Release
+```
+
+Script tạo CSDL và nạp dữ liệu mẫu cho hai tháng 09 và 10/2026. Có thể chạy lại mà không thêm trùng; bảng lương mẫu chỉ được tạo khi tháng chưa tồn tại. Nếu dùng instance khác, sửa chuỗi `NhanSuDB` trong `App.config`.
+
+Từ màn hình chính, mở từng nhóm chức năng; chọn **10/2026** để kiểm tra phân công, công, phụ trội, thưởng phạt, phiếu thu/chi và lương nháp. Với **208 giờ chuẩn**, thực lĩnh tháng 10 của Nguyễn Minh Anh là **8.737.000 đồng**, Trần Quốc Bảo **7.685.000 đồng**, Lê Hoàng Hà **6.000.000 đồng** theo bộ mẫu nguyên trạng. Xem chi tiết và đối soát trước khi chốt; tháng đang diễn ra chưa được chốt.
+
+Chạy kiểm thử tự động:
+
+```powershell
+dotnet run --project '.\LAB7\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu.csproj' -c Release -- --verify
+dotnet run --project '.\LAB7\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu.csproj' -c Release -- --verify-ui
+```
+
+`--verify` tạo và dọn CSDL kiểm thử riêng. `--verify-ui` mở/nạp Form, kiểm tra đủ sáu nhóm và dữ liệu trên 16 màn hình con. Nhật ký `KiemThu_LAB7.txt` và `KiemThu_GiaoDien_LAB7.txt` được tạo trong `LAB7/QuanLyNhanSu/QuanLyNhanSu/bin/Release/net10.0-windows/Verification/`. Xem [README Lab 7](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB7/README.md) và [báo cáo Word](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB7/LAB7/QuanLyNhanSu/NguyenNguyenHau_LAB7.docx) để biết cấu trúc và nghiệp vụ chi tiết.
