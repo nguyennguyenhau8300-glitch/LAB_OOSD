@@ -1,4 +1,4 @@
-# LAB7 – Quản lý nhân sự công ty sơn Đông Á
+# LAB7 – Quản lý nhân sự công ty sơn Đông Á 
 
 [README tổng các bài Lab](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/main/README.md) · [Mã nguồn LAB7](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB7/LAB7/QuanLyNhanSu)
 
