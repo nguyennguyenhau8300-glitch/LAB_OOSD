@@ -22,6 +22,7 @@ Repository lưu các bài Lab từ mô hình lớp và kế thừa trong Java đ
 | Lab 5 | Quản lý công ty du lịch | Tour, hành trình, khách lẻ/đoàn, phân công HDV, khảo sát, lương và thống kê | [LAB5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB5/LAB5) | [README Lab 5](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB5/README.md) |
 | Lab 6 | Quản lý hồ sơ bệnh án | Hồ sơ, lệ phí năm, lịch hẹn, khám định kỳ, xét nghiệm, toa thuốc, thanh toán và danh mục | [LAB6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB6/LAB6) | [README Lab 6](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB6/README.md) |
 | Lab 7 | Quản lý nhân sự công ty sơn Đông Á | Hồ sơ, tuyển dụng/thử việc, hợp đồng, chế độ, chấm công, thưởng phạt và lương tháng | [LAB7](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB7/LAB7/QuanLyNhanSu) | [README Lab 7](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB7/README.md) |
+| Lab 8 | Quản lý cho thuê văn phòng cao ốc | Tầng/phòng, khách hàng, hợp đồng, thanh toán, dịch vụ, gia hạn, nhân viên công ty thuê, thẻ xe và kiểm tra phòng | [LAB8](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/tree/LAB8/LAB8/QuanLyCaoOc) | [README Lab 8](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB8/README.md) |
 
 ## 4. Môi trường và phiên bản
 
@@ -34,8 +35,9 @@ Repository lưu các bài Lab từ mô hình lớp và kế thừa trong Java đ
 | Lab 5 | C#, WinForms, `net10.0-windows`; SDK 10.0.401 | LocalDB 17.0.4025.3; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyCongTyDuLich` |
 | Lab 6 | C#, WinForms, `net10.0-windows`; .NET 10 SDK | SQL Server LocalDB; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyHoSoBenhAnLAB6` |
 | Lab 7 | C#, WinForms, `net10.0-windows`; .NET 10 SDK | SQL Server LocalDB; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyNhanSuLAB7` |
+| Lab 8 | C#, WinForms, `net10.0-windows`; SDK kiểm tra 10.0.402; Visual Studio 2026 | SQL Server LocalDB; `Microsoft.Data.SqlClient` 7.1.1; database `QuanLyCaoOcLAB8` |
 
-Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 Developer Pack và workload **.NET desktop development**. Với Lab 3–7, dùng .NET 10 SDK và Visual Studio hỗ trợ .NET 10. Có thể dùng SSMS để chạy script và kiểm tra dữ liệu SQL Server.
+Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 Developer Pack và workload **.NET desktop development**. Với Lab 3–8, dùng .NET 10 SDK và Visual Studio hỗ trợ .NET 10. Có thể dùng SSMS để chạy script và kiểm tra dữ liệu SQL Server.
 
 ## 5. Nội dung đã thực hiện
 
@@ -98,6 +100,19 @@ Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 
 - Kèm báo cáo Word 66 trang với 33 sơ đồ UML vector, 9 ảnh giao diện, 5 mẫu phiếu; báo cáo kết thúc ở mục 6.4.
 - Có các chế độ `--verify` và `--verify-ui` để kiểm tra nghiệp vụ, điều hướng và dữ liệu hiển thị.
 
+### 5.8. Lab 8 – Quản lý cho thuê văn phòng cao ốc
+
+- Tổ chức 6 nhóm nghiệp vụ: tầng/văn phòng; khách hàng/hợp đồng; thanh toán/dịch vụ; gia hạn; nhân viên công ty thuê/thẻ xe; kiểm tra/xử phạt.
+- Xây dựng 9 Form gồm `FrmMain`, sáu Form nghiệp vụ, `FrmEditor` và `FrmTable`; có 15 màn hình con, mỗi Form có `.cs`/`.Designer.cs`.
+- Sử dụng .NET 10, cấu trúc `Forms`, `Services`, `Data` và `App.config`, tiếp nối cách tổ chức LAB4–LAB7.
+- Thiết kế CSDL 19 bảng; gộp cấu trúc, PK/FK/UNIQUE/CHECK, chỉ mục, view công nợ và dữ liệu mẫu vào `Data/QuanLyCaoOc.sql`.
+- Kiểm tra thuê tối thiểu 6 tháng, trả trước đủ 6 tháng đầu của tất cả phòng, thu từ kỳ 7, phát hành dịch vụ cuối tháng và phân bổ tiền không vượt công nợ.
+- Gia hạn mỗi lần không quá một nửa thời gian thuê gốc; kiểm tra nợ thuê, dịch vụ chưa chốt/chưa trả, hạn hiệu lực và lịch thuê tiếp theo.
+- Quản lý hồ sơ nhân viên công ty thuê, ảnh, nơi làm việc, xe và thẻ; kiểm tra phòng theo chu kỳ 12 tháng, lập phiếu phạt và ghi nhận tiền nộp.
+- Nghiệp vụ nhiều bảng dùng transaction; `RequestId` UNIQUE và khóa ghi bảo vệ thao tác lặp, lịch phòng và số dư khi xử lý đồng thời.
+- Kèm báo cáo Word 63 trang theo 9 phần, có 25 hình gồm sơ đồ draw.io và giao diện chạy thật; SQL/C# được đóng khung.
+- Có hai chế độ `--verify` và `--verify-ui` để kiểm tra nghiệp vụ và giao diện.
+
 ## 6. Kết quả
 
 | Bài Lab | Kết quả được mô tả trong mã nguồn / README của bài |
@@ -109,6 +124,7 @@ Các bài WinForms chạy trên Windows. Với Lab 2, cài .NET Framework 4.7.2 
 | Lab 5 | README ghi build 0 lỗi, 0 cảnh báo; mở 9 form/17 màn hình hoặc tab; kiểm tra lương mẫu và 5 chỉ số thống kê. |
 | Lab 6 | 7 Form, CSDL 12 bảng; bộ dữ liệu 12 bệnh nhân, 18 phiếu khám, 27 xét nghiệm, 12 toa và 10 thanh toán; hai chế độ kiểm thử nghiệp vụ và danh mục. |
 | Lab 7 | 6 nhóm chức năng, 16 màn hình con; CSDL 17 bảng/19 FK; 240 phân công, 240 dòng công, 2 phiếu thu/chi, 2 bảng lương nháp/6 chi tiết. Lần kiểm tra 24/10/2026: build 0 lỗi/0 cảnh báo, 36/36 nghiệp vụ và 57/57 giao diện đạt. |
+| Lab 8 | 6 nhóm chức năng, 9 Form, 15 màn hình con; CSDL 19 bảng; mẫu 3 tầng, 9 phòng, 3 công ty, 3 hợp đồng và dữ liệu thu tiền, dịch vụ, gia hạn, thẻ xe, kiểm tra/phạt. Lần kiểm tra 30/10/2026: build Release 0 lỗi/0 cảnh báo, 50/50 nghiệp vụ và 44/44 giao diện đạt. |
 
 Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao diện, kết nối, lương và thống kê; chưa thực hiện đầy đủ 24 test case nghiệp vụ trong tài liệu.
 
@@ -119,7 +135,7 @@ Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao di�
 | Lab 2: không mở được database | Khởi động LocalDB, chạy script tạo CSDL và kiểm tra kết nối trong `App.config`. |
 | Lab 2: thiếu `InitializeComponent`, control hoặc event handler | Kiểm tra cặp file `.cs`/`.Designer.cs`, khai báo control và tên hàm xử lý sự kiện. |
 | Lab 3: lỗi đăng nhập SQL Server | Sửa server/instance và thông tin xác thực trong `Data/Db.cs` theo máy chạy; kiểm tra quyền truy cập CSDL. |
-| Lab 3–7: thiếu `Microsoft.Data.SqlClient` | Restore NuGet trước khi build, kiểm tra phiên bản gói trong `.csproj`. |
+| Lab 3–8: thiếu `Microsoft.Data.SqlClient` | Restore NuGet trước khi build, kiểm tra phiên bản gói trong `.csproj`. |
 | Lab 3: đặt phòng trùng lịch hoặc xóa dữ liệu có khóa ngoại | Kiểm tra lịch phòng và các bản ghi liên quan trước khi thao tác. |
 | Lab 4: script tiếng Việt bị sai ký tự | Mở script UTF-8 trong SSMS hoặc dùng `sqlcmd -f 65001`. |
 | Lab 4: không kết nối được LocalDB | Khởi động instance và kiểm tra `Connection.txt`. |
@@ -127,6 +143,10 @@ Kết quả trên tổng hợp từ từng bài. Lab 5 đã kiểm tra giao di�
 | Lab 5: filtered index báo lỗi `QUOTED_IDENTIFIER` | Dùng `SET QUOTED_IDENTIFIER ON`, `SET ANSI_NULLS ON`; khi chạy `sqlcmd` thêm `-I`. |
 | Lab 6: chưa có CSDL hoặc thiếu dữ liệu | Chạy toàn bộ `LAB6/QuanLyHoSoBenhAn/QuanLyHoSoBenhAn/Data/QuanLyHoSoBenhAn.sql`; kiểm tra `App.config`. |
 | Lab 7: Form phân công, thu chi hoặc lương trống | Chạy toàn bộ `LAB7/QuanLyNhanSu/QuanLyNhanSu/Data/QuanLyNhanSu.sql`, chọn tháng 09 hoặc 10/2026 rồi Tải lại; kiểm tra `NhanSuDB` trong `App.config`. |
+| Lab 8: không khởi tạo được database | Khởi động LocalDB, kiểm tra chuỗi `CaoOcDB` trong `App.config` và quyền tạo database; xem `startup-error.txt` cạnh chương trình. |
+| Lab 8: cột mã trong bảng nhập nhiều phòng chưa khóa sửa | Khởi tạo `BindingContext` trước khi gán `DataSource`, sau đó chỉ cho sửa các cột nằm trong danh sách `editable`. |
+| Lab 8: vùng ảnh nhân viên hoặc nút chọn ảnh hiển thị chưa đúng | Điều chỉnh thứ tự Dock của lưới/vùng ảnh và tăng kích thước nút chọn ảnh; chụp lại giao diện để đối chiếu. |
+| Lab 8: gia hạn bị từ chối | Kiểm tra nợ thuê, hóa đơn dịch vụ, kỳ chưa đối soát, giới hạn tháng và hạn phòng; dữ liệu trình diễn dùng ngày lập 30/10/2026. |
 
 ## 8. Hướng dẫn giảng viên kiểm tra và chạy lại
 
@@ -140,7 +160,7 @@ cd LAB_OOSD
 git switch LAB1
 ```
 
-Thay `LAB1` bằng `LAB2`, `LAB3`, `LAB4`, `LAB5`, `LAB6` hoặc `LAB7` để xem bài khác. Trước khi chuyển nhánh, lưu các thay đổi đang thực hiện. Có thể chọn nhánh trên GitHub rồi chọn **Code → Download ZIP**.
+Thay `LAB1` bằng `LAB2`, `LAB3`, `LAB4`, `LAB5`, `LAB6`, `LAB7` hoặc `LAB8` để xem bài khác. Trước khi chuyển nhánh, lưu các thay đổi đang thực hiện. Có thể chọn nhánh trên GitHub rồi chọn **Code → Download ZIP**.
 
 ### 8.2. Lab 1
 
@@ -256,3 +276,43 @@ dotnet run --project '.\LAB7\QuanLyNhanSu\QuanLyNhanSu\QuanLyNhanSu.csproj' -c R
 ```
 
 `--verify` tạo và dọn CSDL kiểm thử riêng. `--verify-ui` mở/nạp Form, kiểm tra đủ sáu nhóm và dữ liệu trên 16 màn hình con. Nhật ký `KiemThu_LAB7.txt` và `KiemThu_GiaoDien_LAB7.txt` được tạo trong `LAB7/QuanLyNhanSu/QuanLyNhanSu/bin/Release/net10.0-windows/Verification/`. Xem [README Lab 7](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB7/README.md) và [báo cáo Word](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB7/LAB7/QuanLyNhanSu/NguyenNguyenHau_LAB7.docx) để biết cấu trúc và nghiệp vụ chi tiết.
+
+### 8.9. Lab 8
+
+Chuyển sang nhánh `LAB8`, mở PowerShell tại thư mục gốc repository:
+
+```powershell
+git switch LAB8
+SqlLocalDB start MSSQLLocalDB
+dotnet restore '.\LAB8\QuanLyCaoOc\QuanLyCaoOc.sln'
+dotnet build '.\LAB8\QuanLyCaoOc\QuanLyCaoOc.sln' -c Release
+dotnet run --project '.\LAB8\QuanLyCaoOc\QuanLyCaoOc\QuanLyCaoOc.csproj' -c Release
+```
+
+Lần khởi động đầu, chương trình tự tạo database `QuanLyCaoOcLAB8`, chạy file `LAB8/QuanLyCaoOc/QuanLyCaoOc/Data/QuanLyCaoOc.sql` và nạp dữ liệu mẫu. Những lần sau giữ dữ liệu hiện có. Nếu dùng instance khác, sửa chuỗi `CaoOcDB` trong `App.config` rồi build lại.
+
+Nếu chạy SQL thủ công bằng SSMS, tạo và chọn database `QuanLyCaoOcLAB8`, sau đó thực thi toàn bộ script trong `Data`. Script từ chối chạy trong database hệ thống.
+
+Từ màn hình chính, mở đủ sáu module và kiểm tra:
+
+1. Tầng/phòng: lọc tầng, tra cứu lịch trống và xem lịch sử thuê.
+2. Hợp đồng: chọn khách, nhiều phòng và thời hạn tối thiểu 6 tháng.
+3. Thanh toán: thu trước 6 tháng; thử thu thiếu, thu đủ và thu vượt số dư.
+4. Dịch vụ: xem hóa đơn P101 tháng **09/2026** đã phát hành **1.300.000 đồng**, chưa thu; tháng **10/2026** còn nháp **700.000 đồng**.
+5. Gia hạn: chọn An Phát để kiểm tra nhánh từ chối do công nợ; chọn Sao Việt, P301, ngày lập **30/10/2026** và gia hạn **1–3 tháng** để thử nhánh thành công.
+6. Nhân viên/thẻ xe và kiểm tra/phạt: tra cứu hồ sơ, cấp/thu hồi thẻ, xem biên bản, ghi tiền nộp và xuất CSV.
+
+Bộ mẫu dùng mốc **30/10/2026**. Nếu dùng ngày khác phải đối soát dịch vụ đến ngày xử lý; khi phòng đã quá hạn thì lập hợp đồng mới.
+
+Chạy kiểm thử tự động:
+
+```powershell
+dotnet run --project '.\LAB8\QuanLyCaoOc\QuanLyCaoOc\QuanLyCaoOc.csproj' -c Release -- --verify
+dotnet run --project '.\LAB8\QuanLyCaoOc\QuanLyCaoOc\QuanLyCaoOc.csproj' -c Release -- --verify-ui
+```
+
+`--verify` tạo database riêng `QuanLyCaoOcLAB8_TEST_<guid>`, kiểm tra trên SQL Server thật rồi dọn database thử. `--verify-ui` mở 9 Form, 15 màn hình con và các hộp nhập; đóng bằng Hủy, không lưu chứng từ thử. Lần chạy đầu vẫn khởi tạo database và dữ liệu mẫu như khởi động bình thường.
+
+Nhật ký `verification.txt` nằm trong `LAB8/QuanLyCaoOc/QuanLyCaoOc/bin/Release/net10.0-windows/`; ảnh và nhật ký giao diện nằm trong thư mục con `Verification/UI/`.
+
+Xem [README Lab 8](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB8/README.md) và [báo cáo Word](https://github.com/nguyennguyenhau8300-glitch/LAB_OOSD/blob/LAB8/LAB8/QuanLyCaoOc/NguyenNguyenHau_LAB8.docx) để biết mô hình, cấu trúc và hướng dẫn từng Form.
