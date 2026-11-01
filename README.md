@@ -1,4 +1,4 @@
-# LAB6 – Quản lý hồ sơ bệnh án
+# LAB6 – Quản lý hồ sơ bệnh án 
 
 Bài thực hành phân tích, thiết kế hướng đối tượng và xây dựng ứng dụng C# Windows Forms kết nối SQL Server, dựa trên đề **Quản lý hồ sơ bệnh án của bệnh nhân**.
 
