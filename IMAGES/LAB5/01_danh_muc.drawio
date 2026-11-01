@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Quản lý danh mục" id="01_danh_muc">
+    <mxGraphModel dx="1363" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=0;verticalAlign=top;spacingTop=18;fontSize=24;fillColor=#FFFFFF;strokeColor=#334155;fontColor=#060B09;" value="Quản lý&#xa;danh mục" vertex="1">
+          <mxGeometry height="740" width="690" x="260" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="actor" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=0;fontSize=21;" value="NV điều&#xa;hành" vertex="1">
+          <mxGeometry height="110" width="65" x="70" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="uc0" parent="1" style="ellipse;whiteSpace=wrap;html=0;fontSize=22;fillColor=#F8FAFC;strokeColor=#334155;" value="Quản lý&#xa;phương tiện" vertex="1">
+          <mxGeometry height="96" width="400" x="490" y="167" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" edge="1" parent="1" source="actor" style="endArrow=none;html=0;rounded=0;strokeColor=#334155;" target="uc0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" parent="1" style="ellipse;whiteSpace=wrap;html=0;fontSize=22;fillColor=#F8FAFC;strokeColor=#334155;" value="Quản lý&#xa;điểm tham quan" vertex="1">
+          <mxGeometry height="96" width="400" x="490" y="317" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="actor" style="endArrow=none;html=0;rounded=0;strokeColor=#334155;" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="1" style="ellipse;whiteSpace=wrap;html=0;fontSize=22;fillColor=#F8FAFC;strokeColor=#334155;" value="Quản lý&#xa;điểm bán vé" vertex="1">
+          <mxGeometry height="96" width="400" x="490" y="467" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="actor" style="endArrow=none;html=0;rounded=0;strokeColor=#334155;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" parent="1" style="ellipse;whiteSpace=wrap;html=0;fontSize=22;fillColor=#F8FAFC;strokeColor=#334155;" value="Quản lý&#xa;hướng dẫn viên" vertex="1">
+          <mxGeometry height="96" width="400" x="490" y="617" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="actor" style="endArrow=none;html=0;rounded=0;strokeColor=#334155;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

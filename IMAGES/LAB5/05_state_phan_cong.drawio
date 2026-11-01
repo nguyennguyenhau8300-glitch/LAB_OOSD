@@ -1,0 +1,57 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="05_state_phan_cong" name="Trạng thái phân công hướng dẫn viên">
+    <mxGraphModel dx="1231" dy="680" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1250" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s" parent="1" style="whiteSpace=wrap;html=0;fontSize=20;fontFamily=Arial;strokeColor=#334155;fillColor=#F8FAFC;ellipse;fillColor=#334155;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="530" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="wait" parent="1" style="whiteSpace=wrap;html=0;fontSize=20;fontFamily=Arial;strokeColor=#334155;fillColor=#F8FAFC;rounded=1;arcSize=15;" value="Đã phân công&#xa;Chờ thực hiện tour" vertex="1">
+          <mxGeometry height="85" width="400" x="350" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="busy" parent="1" style="whiteSpace=wrap;html=0;fontSize=20;fontFamily=Arial;strokeColor=#334155;fillColor=#F8FAFC;rounded=1;arcSize=15;" value="Đang thực hiện tour" vertex="1">
+          <mxGeometry height="85" width="400" x="350" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="done" parent="1" style="whiteSpace=wrap;html=0;fontSize=20;fontFamily=Arial;strokeColor=#334155;fillColor=#F8FAFC;rounded=1;arcSize=15;" value="Đã hoàn thành tour" vertex="1">
+          <mxGeometry height="85" width="400" x="350" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="cancel" parent="1" style="whiteSpace=wrap;html=0;fontSize=20;fontFamily=Arial;strokeColor=#334155;fillColor=#F8FAFC;rounded=1;arcSize=15;" value="Đã gỡ phân công" vertex="1">
+          <mxGeometry height="85" width="280" x="30" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="e" parent="1" style="whiteSpace=wrap;html=0;fontSize=20;fontFamily=Arial;strokeColor=#334155;fillColor=#F8FAFC;shape=doubleEllipse;fillColor=#334155;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="535" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="n" parent="1" style="whiteSpace=wrap;html=0;fontSize=20;fontFamily=Arial;strokeColor=#334155;fillColor=#F8FAFC;text;strokeColor=none;fillColor=none;fontSize=17;" value="Các trạng thái thực hiện suy ra từ NgayBatDau và NgayKetThuc.&#xa;Hủy đoàn xóa bản ghi PhanCongHDV.&#xa;DangLamViec là cờ của HDV, không biểu diễn rảnh hay bận." vertex="1">
+          <mxGeometry height="140" width="900" x="100" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="s" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;html=0;fontSize=17;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" target="wait" value="PhanCong hợp lệ / không trùng lịch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="wait" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;html=0;fontSize=17;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" target="busy" value="Ngày bắt đầu ≤ hôm nay ≤ ngày kết thúc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="busy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;html=0;fontSize=17;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" target="done" value="Hôm nay &gt; ngày kết thúc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="done" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;html=0;fontSize=17;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" target="e" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="wait" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;html=0;fontSize=17;strokeColor=#334155;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" target="cancel" value="Đoàn hủy trước ngày đi">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="212" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="cancel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=open;endFill=0;html=0;fontSize=17;strokeColor=#334155;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" target="e" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="170" y="945" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
